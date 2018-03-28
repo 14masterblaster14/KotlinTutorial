@@ -2,6 +2,9 @@ class Basics
 
 fun main(args: Array<String>) {
 
+    // Immutable : val
+    // Mutable :  var
+
     // Ranges
 
     val r1 = 1..5                   // 1,2,3,4,5
