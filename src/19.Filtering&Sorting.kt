@@ -49,6 +49,10 @@ fun main(args: Array<String>) {
     }
 
 
+    val numList = 1..20
+    val evenList = numList.filter { it % 2 == 0 }
+    evenList.forEach({ n -> println(n) })
+
     //  Predicates
 
     val mynumbers = listOf(2, 3, 4, 6, 23, 90)

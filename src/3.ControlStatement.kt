@@ -18,6 +18,20 @@ fun main(args: Array<String>) {
 
     println(maxVal)
 
+    val age = 8
+
+    if (age < 6) {
+        println(" Go to Preschool")
+    } else if (age == 6) {
+        println(" Go to Kindergarten")
+    } else if ((age > 6) && (age <= 18)) {
+        val grade = age - 6
+        println("Go to grade : $grade")
+    } else {
+        println("Go to College")
+    }
+
+
     // when
 
 
@@ -27,6 +41,7 @@ fun main(args: Array<String>) {
         2 -> {
             println("X is 2")
         }
+        in 3..6 -> println("X is in between 3 & 6")
         else -> {
             println("X value is unknown")
             println("I don't know what is X")

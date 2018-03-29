@@ -39,6 +39,21 @@ fun main(args: Array<String>) {
         println(myArray[index])
     }
 
+    println("Array length : ${myArray.size}")
+    println("32 in Array : ${myArray.contains(32)}")
+
+    var partMyArray = myArray.copyOfRange(0, 1)
+    println("partMyArray : ")
+
+    for (element in partMyArray) {
+        println(element)
+    }
+
+    println("First : ${myArray.first()}")
+    println("54 index : ${myArray.indexOf(54)}")
+
+
+
     //  ********  List  ********
 
     var list = listOf<String>("Yogi", "Manmohan", "Vajpayee")     // Immutable, Fixed Size, READ only
@@ -67,6 +82,10 @@ fun main(args: Array<String>) {
         println(element)
     }
 
+    println("First : ${list3.first()}")
+    println("Last : ${list3.last()}")
+    println("Sublist : ${list3.subList(0, 1)}")
+
 
     //  ********  Map  ********
     //  Key - Value Pair
@@ -91,6 +110,12 @@ fun main(args: Array<String>) {
         println("Element at Key : $key = ${myMap3[key]}")    // myMap3.get(key)
     }
 
+    val myMap4 = mutableMapOf<Int, Any?>()
+    myMap4[1] = "Master"
+    myMap4[2] = 14
+    for (key in myMap4.keys) {
+        println("Element at Key : $key = ${myMap4[key]}")    // myMap4.get(key)
+    }
 
     //  ********  Set  ********
     //  "Set" contains Unique element

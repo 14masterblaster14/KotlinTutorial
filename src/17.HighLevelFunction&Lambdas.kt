@@ -70,6 +70,45 @@ fun main(args: Array<String>) {
         println(age)
     }.startRun()
 
+    // ---------------------------------------------------
+    val (two, three) = nextTwo(1)
+    println(" 1 $two $three")
+
+    println("Sum = ${getSum(1, 2, 3, 4, 5)}")               //Sum = 15
+
+    val multiply = { num1: Int, num2: Int -> num1 * num2 }
+    println(" 5 * 3 = ${multiply(5, 3)}")                    // 5 * 3 = 15
+
+    val multiply2 = { num1: Int -> num1 * 2 }
+    val numList2 = arrayOf(1, 2, 3, 4, 5)
+    mathOnList(numList2, multiply2)
+
+    val numList3 = 1..20
+
+    val listSum = numList3.reduce { x, y -> x + y }
+    println("Reduced Sum : $listSum")           // 210
+
+    val listSum1 = numList3.fold(5) { x, y -> x + y }
+    println(" Fold Sum : $listSum1")            // 5+210 ==> 215
+
+
+}
+
+
+fun nextTwo(num: Int): Pair<Int, Int> {
+    return Pair(num + 1, num + 2)
+}
+
+fun getSum(vararg nums: Int): Int {
+    var sum = 0
+    nums.forEach { n -> sum += n }
+    return sum
+}
+
+fun mathOnList(numList: Array<Int>, myFunc: (num: Int) -> Int) {
+    for (num in numList) {
+        println("MathOnList : ${myFunc(num)}")
+    }
 }
 
 class Program {
@@ -107,6 +146,7 @@ class Program {
         var result3 = myFunc(str)       // str.reversed()= "hello".reversed = "olleh"
         println(result3)
     }
+
 }
 
 interface MyInterface {

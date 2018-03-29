@@ -4,6 +4,8 @@ fun main(args: Array<String>) {
     myButton.onTouch()
     myButton.onClick()
 
+    val tweety = Bird("Tweety", true)
+    tweety.fly(10.0)
 }
 
 interface MyInterfaceListener {     // You cannot create instance of interface
@@ -46,6 +48,20 @@ class MyButton : MyInterfaceListener, MySecondInterface {
         super<MyInterfaceListener>.onClick()
         super<MySecondInterface>.onClick()
         println("Button was clicked")
+    }
+
+}
+
+interface Flyable {
+    val flies: Boolean
+    fun fly(distMile: Double): Unit
+}
+
+class Bird constructor(val name: String, override var flies: Boolean = true) : Flyable {
+    override fun fly(distMile: Double): Unit {
+        if (flies) {
+            println("$name flies $distMile miles")
+        }
     }
 
 }
