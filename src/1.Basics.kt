@@ -9,18 +9,18 @@ fun main(args: Array<String>) {
     var bigFloat: Float = Float.MAX_VALUE
     var smallFloat: Float = Float.MIN_VALUE
 
-    println("Biggest Int : $bigInt")
-    println("Smallest Int : $smallInt")
-    println("Biggest Long : $bigLong")
-    println("Smallest Long : $smallLong")
-    println("Biggest Double : $bigDouble")
-    println("Smallest Double : $smallDouble")
-    println("Biggest Float : $bigFloat")
-    println("Smallest Float : $smallFloat")
+    println("Biggest Int : $bigInt")            // 2147483647
+    println("Smallest Int : $smallInt")         // -2147483648
+    println("Biggest Long : $bigLong")          // 9223372036854775807
+    println("Smallest Long : $smallLong")       // -9223372036854775808
+    println("Biggest Double : $bigDouble")      // 1.7976931348623157E308
+    println("Smallest Double : $smallDouble")   // 4.9E-324
+    println("Biggest Float : $bigFloat")        // 3.4028235E38
+    println("Smallest Float : $smallFloat")     // 1.4E-45
 
 
     var char: Char = 'A'
-    println(" A is Char :  ${char is Char} ")
+    println(" A is Char :  ${char is Char} ")   // true
 
     if (true is Boolean) {
 
