@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
 
     var r4 = 'a'..'z'              // "a","b","c",...."z"
 
-    var isPresent = 'd' in r4
+    var isPresent = 'd' in r4           // true
 
     var countDown = 10.downTo(1)    //10,9,8...1
 

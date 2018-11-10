@@ -86,6 +86,9 @@ fun main(args: Array<String>) {
     println("Last : ${list3.last()}")
     println("Sublist : ${list3.subList(0, 1)}")
 
+    list1.add(0, "India")
+    list1.add(2, "America")
+    list2.add(1, "Japan")
 
     //  ********  Map  ********
     //  Key - Value Pair
@@ -117,6 +120,10 @@ fun main(args: Array<String>) {
         println("Element at Key : $key = ${myMap4[key]}")    // myMap4.get(key)
     }
 
+    myMap1.put(14, "MasterBlaster")
+    myMap2.put(21, "Dada")
+
+
     //  ********  Set  ********
     //  "Set" contains Unique element
     //  "HashSet" also contains unique element but sequence is not guaranteed in output
@@ -136,4 +143,7 @@ fun main(args: Array<String>) {
     for (element in mySet2) {
         println(element)
     }
+
+    mySet1.add(7)
+    mySet1.remove(8)
 }

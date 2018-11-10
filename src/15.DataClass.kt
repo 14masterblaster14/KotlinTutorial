@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
     var user2 = User("Master", 7)
 
     if (user1 == user2) {
-        println("objects are equal")
+        println("objects are equal")    // executed
     } else {
         println("objects are not equal")
     }
