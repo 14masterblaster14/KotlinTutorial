@@ -3,10 +3,12 @@
 
 fun main(args: Array<String>) {
 
-    // Data types
+    // Data types ::
+    //              Immutable : val
+    //              Mutable :  var
     /*
      *        Data Type	    Size
-     *        Double	        64
+     *        Double	    64
      *        Float	        32
      *        Long	        64
      *        Int	        32
@@ -41,10 +43,10 @@ fun main(args: Array<String>) {
     println("Smallest Double : $smallDouble")   // 4.9E-324
     println("Biggest Float : $bigFloat")        // 3.4028235E38
     println("Smallest Float : $smallFloat")     // 1.4E-45
-    println("Biggest Short : $bigShort")
-    println("Smallest Short : $smallShort")
-    println("Biggest Byte : $bigByte")
-    println("Smallest Byte : $smallByte")
+    println("Biggest Short : $bigShort")        // 32767
+    println("Smallest Short : $smallShort")     // -32768
+    println("Biggest Byte : $bigByte")          // 127
+    println("Smallest Byte : $smallByte")       // -128
 
     var char: Char = 'A'
     println(" A is Char :  ${char is Char} ")   // true
@@ -64,9 +66,33 @@ fun main(args: Array<String>) {
 
     println("Compare A to B : ${"A".compareTo("B")}")           // -1
 
-    println(" 2nd Index : ${str1[2]}")          // r
+    println(" 2nd Index : ${str1[2]}")                          // r
 
     println(" Index 2 - 7 : ${str1.subSequence(2, 8)}")          //random
 
     println("Contains random : ${str1.contains("random")}")     //true
+
+    // Ranges
+
+    val r1 = 1..5                   // 1,2,3,4,5
+
+    val r2 = 5 downTo 1             // 5,4,3,2,1
+
+    val r3 = 5 downTo 1 step 2      // 5,3,1
+
+    var r4 = 'a'..'z'              // "a","b","c",...."z"
+
+    var isPresent = 'd' in r4           // true
+
+    var countDown = 10.downTo(1)    //10,9,8...1
+
+    var moveUp = 1.rangeTo(10)      // 1,2,3,...10
+
+    println(r1)         //  1..5
+    println(r2)         //  5 downTo 1 step 1
+    println(r3)         //  5 downTo 1 step 2
+    println(r4)         //  a..z
+    println(isPresent)  // true
+    println(countDown)  // 10 downTo 1 step 1
+    println(moveUp)     // 1..10
 }
