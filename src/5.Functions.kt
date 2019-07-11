@@ -3,11 +3,12 @@
 fun main(args: Array<String>) {
 
     var sum = add(2, 4)
-    println("Sum is : $sum")
-    display(null)
+    println("Sum is : $sum")        // Sum is : 6
+    display(null)               // Unit is equivalent to Void
 
     var largeValue = max(4, 6)
-    display("The greater number is $largeValue")
+    display("The greater number is $largeValue")    // 6 is greater
+    //  The greater number is 6
 }
 
 fun add(a: Int, b: Int): Int {
