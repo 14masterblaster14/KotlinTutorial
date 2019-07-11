@@ -16,7 +16,8 @@ fun main(args: Array<String>) {
         b
     }
 
-    println(maxVal)
+    println(maxVal)     // O/P :        b is greater
+    //              5
 
     val age = 8
 
@@ -31,6 +32,7 @@ fun main(args: Array<String>) {
         println("Go to College")
     }
 
+    // O/P : Go to grade : 2
 
     // when
 
@@ -47,6 +49,7 @@ fun main(args: Array<String>) {
             println("I don't know what is X")
         }
     }
+    //  O/P : X is 0 ro 1
 
     // when as an expression
 
@@ -61,6 +64,6 @@ fun main(args: Array<String>) {
         }
     }
 
-    println(str)
+    println(str)      // y value is unknown
 
 }
