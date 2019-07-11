@@ -1,7 +1,8 @@
-// It can be member function or extension function
-// They have a just a single parameter
-// They have prefix of "infix"
-// All infix functions are Extension functions but all extension functions are not Infix.
+// Infix Function ::
+//      - It can be member function or extension function
+//      - They have a just a single parameter
+//      - They have prefix of "infix"
+//      - All infix functions are Extension functions but all extension functions are not Infix.
 
 fun main(args: Array<String>) {
 
@@ -9,7 +10,7 @@ fun main(args: Array<String>) {
     val y = 10
     //val greaterValue = x.greaterValue1(y) //  extension function
     val greaterValue = x greaterValue1 y // infix function
-    println(greaterValue)
+    println(greaterValue)               // 10
 }
 
 infix fun Int.greaterValue1(other: Int): Int {
