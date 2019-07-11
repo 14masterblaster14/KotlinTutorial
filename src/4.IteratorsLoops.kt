@@ -11,12 +11,28 @@ fun main(args: Array<String>) {
         println("i Numeber : $i")
     }
 
+/* O/P :
+        i Numeber : 1
+        i Numeber : 2
+        i Numeber : 3
+        i Numeber : 4
+        i Numeber : 5
+        i Numeber : 6
+        i Numeber : 7
+*/
+
     //2. While loop
     var j = 2
     while (j <= 4) {
         println("j Number : $j")
         j++
     }
+
+/*O/P:
+        j Number : 2
+        j Number : 3
+        j Number : 4
+*/
 
     while (j <= 10) {
         if (j % 2 == 0) {
@@ -25,6 +41,11 @@ fun main(args: Array<String>) {
         j++
     }
 
+/*O/P:
+        6
+        8
+        10
+*/
 
     //3. Do while loop
     var k: Int = 4
@@ -34,6 +55,15 @@ fun main(args: Array<String>) {
         k++
     } while (k < 7)
 
+/* O/P:
+        Hello
+        k Number : 4
+        Hello
+        k Number : 5
+        Hello
+        k Number : 6
+*/
+
     var l: Int = 1
     do {
         if (l % 2 == 0) {
@@ -41,6 +71,11 @@ fun main(args: Array<String>) {
         }
         l++
     } while (l <= 4)
+
+/* O/P:
+        2
+        4
+*/
 
 
     //4. Break Statement
@@ -52,6 +87,15 @@ fun main(args: Array<String>) {
         }
     }
 
+/*O/P:
+         m: 1, n: 1
+         m: 1, n: 2
+         m: 1, n: 3
+         m: 2, n: 1
+         m: 2, n: 2
+*/
+
+
     //5. Continue Statement
     outer@ for (p in 1..3) {
         for (q in 1..3) {
@@ -60,4 +104,16 @@ fun main(args: Array<String>) {
                 continue@outer
         }
     }
+
+/*O/P:
+         p: 1, q: 1
+         p: 1, q: 2
+         p: 1, q: 3
+         p: 2, q: 1
+         p: 2, q: 2
+         p: 3, q: 1
+         p: 3, q: 2
+         p: 3, q: 3
+ */
+
 }
