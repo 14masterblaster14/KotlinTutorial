@@ -1,13 +1,37 @@
+//  REPL --> Read ,Evaluate, Print, Loop
+//  fun Kotlin.main (args : Array<String>)
+
 fun main(args: Array<String>) {
+
+    // Data types
+    /*
+     *        Data Type	    Size
+     *        Double	        64
+     *        Float	        32
+     *        Long	        64
+     *        Int	        32
+     *        Short	        16
+     *        Byte	        8
+     *
+     */
 
     var bigInt: Int = Int.MAX_VALUE
     var smallInt: Int = Int.MIN_VALUE
+
     var bigLong: Long = Long.MAX_VALUE
     var smallLong: Long = Long.MIN_VALUE
+
     var bigDouble: Double = Double.MAX_VALUE
     var smallDouble: Double = Double.MIN_VALUE
+
     var bigFloat: Float = Float.MAX_VALUE
     var smallFloat: Float = Float.MIN_VALUE
+
+    var bigShort: Short = Short.MAX_VALUE
+    var smallShort: Short = Short.MIN_VALUE
+
+    var bigByte: Byte = Byte.MAX_VALUE
+    var smallByte: Byte = Byte.MIN_VALUE
 
     println("Biggest Int : $bigInt")            // 2147483647
     println("Smallest Int : $smallInt")         // -2147483648
@@ -17,7 +41,10 @@ fun main(args: Array<String>) {
     println("Smallest Double : $smallDouble")   // 4.9E-324
     println("Biggest Float : $bigFloat")        // 3.4028235E38
     println("Smallest Float : $smallFloat")     // 1.4E-45
-
+    println("Biggest Short : $bigShort")
+    println("Smallest Short : $smallShort")
+    println("Biggest Byte : $bigByte")
+    println("Smallest Byte : $smallByte")
 
     var char: Char = 'A'
     println(" A is Char :  ${char is Char} ")   // true
