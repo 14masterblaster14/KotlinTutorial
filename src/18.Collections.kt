@@ -66,6 +66,10 @@ fun main(args: Array<String>) {
         println(list[index])   // list.get(index)
     }
 
+    for ((index, value) in list.withIndex()) {
+        println("The element at $index is $value")
+    }
+
     var list1 = mutableListOf<String>()       // Mutable, No Fixed size, Can Add/Remove elements
     var list2 = arrayListOf<String>()           // Mutable, No Fixed size, Can Add/Remove elements
     var list3 = ArrayList<String>()                           // Mutable, No Fixed size, Can Add/Remove elements

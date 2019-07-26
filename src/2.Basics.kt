@@ -60,6 +60,8 @@ fun main(args: Array<String>) {
     println("A to Int : ${'A'.toInt()}")                // 65
     println("65 to Char : ${65.toChar()}")              // A
 
+    // String ::
+
     var str1 = "A random string"
     var str2 = "a random string"
     println(" String Equal : ${str1.equals(str2)}")             // false

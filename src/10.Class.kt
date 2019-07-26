@@ -1,3 +1,5 @@
+// Class ::
+
 // Primary Constructors:
 //      init Block
 //      Primary Constructor with Property (field variables)
@@ -20,6 +22,14 @@ fun main(args: Array<String>) {
     bowser.getInfo()
 
     val doggy = Dogs("Spot", 20.0, 14.5, "Master_Blaster")
+
+    println(OuterNested.InnerNested().innerName)
+    println(OuterNested.InnerNested().getInnerName())
+
+    println(OuterClass().InnerClass().innerName)
+    println(OuterClass().InnerClass().getInnerName())
+
+
 }
 
 // Primary Constructors
@@ -69,9 +79,61 @@ open class Animals(val name: String, var height: Double, var weight: Double) {
 }
 
 class Dogs(name: String, height: Double, weight: Double, var owner: String) : Animals(name, height, weight) {
+    /* OR
+        class Dogs : Animals {
+            constructor(name: String, height: Double, weight: Double, owner: String) : super(name, height, weight){
+
+            }
+    */
     override fun getInfo(): Unit {
         super.getInfo()
         println("$name is $height tall and weighs $weight and is owner $owner")
 
+    }
+}
+
+
+// Nested Class :
+//                  Its a class within class, which will be static by Default.
+//                  So its function and properties can be accessed w/o creating object
+//                  But it can't access outer class function and properties
+
+class OuterNested {
+
+    var outerName = "Master"
+    fun getOuterName() {
+        println("Calling Outer class , $ outerName")
+    }
+
+    class InnerNested {
+
+        var innerName = "Blaster"
+        fun getInnerName() {
+            println("Calling Inner class , $innerName")
+            //println("Calling  class , $outerName")  // Throws error as its not allowed
+        }
+    }
+}
+
+// Inner Class :
+//                  Its a nested class marked as Inner
+//                  We can access member of outer class even it is private
+//                  Inner class keeps a reference to an object of outer class.
+
+class OuterClass {
+
+    private var outerName = "Master"
+    fun getOuterName() {
+        println("Calling Outer class , $outerName")
+    }
+
+    inner class InnerClass {
+
+        var innerName = "Blaster"
+        fun getInnerName() {
+            println("Calling Inner class , $innerName")
+            println("Calling  class , $outerName")
+
+        }
     }
 }
