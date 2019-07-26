@@ -21,6 +21,18 @@ fun main(args: Array<String>) {
         i Numeber : 7
 */
 
+    var m = 1
+    var n = 4
+    for (i in m until n) {
+        println(i)
+    }
+
+/* O/P :
+        1
+        2
+        3
+*/
+
     //2. While loop
     var j = 2
     while (j <= 4) {

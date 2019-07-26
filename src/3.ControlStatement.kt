@@ -1,7 +1,25 @@
 // 1. if as expression
 // 2. when as expression
+// 3. Elvis operator
 
 fun main(args: Array<String>) {
+
+    var p = 7
+    var q = 2
+
+    if (p < q) println("q is bigger")
+    else println("p is bigger")
+
+
+    if (p == 0)
+        println("Zero argument : First")
+    else if
+                 (q == 0) println("Zero argument : Second")
+    else if
+                 (p < q) println(" q is bigger")
+    else
+        println("p is bigger")
+
 
     // if as an expression
 
@@ -65,5 +83,12 @@ fun main(args: Array<String>) {
     }
 
     println(str)      // y value is unknown
+
+
+    // Elvis operator
+
+    var name = "MasterBlaster"
+
+    val length = name.length
 
 }
