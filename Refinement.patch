@@ -1,0 +1,34 @@
+Index: src/7.ExtensionFunctions.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/7.ExtensionFunctions.kt	(revision c48a365e8b8d9043256de9be1448bb82977b443e)
++++ src/7.ExtensionFunctions.kt	(date 1562852572339)
+@@ -1,20 +1,22 @@
++// Extension Functions
++
+ fun main(args: Array<String>) {
+ 
+     var student = Student()
+-    println("Pass Status " + student.hasPassed(60))
+-    println("Scholarship Status " + student.isScholar(95))
++    println("Pass Status " + student.hasPassed(60))         //  Pass Status true
++    println("Scholarship Status " + student.isScholar(95))  //  Scholarship Status true
+ 
+     //We can also create the extension function for standard/ predefined classes as well
+     val string1 = "Hello"
+     val string2 = "World!"
+     var string3 = "Hey,"
+ 
+-    println(string3.add(string1, string2))
++    println(string3.add(string1, string2))  // Hey,HelloWorld!
+ 
+     val x = 6
+     val y = 10
+     val greaterValue = x.greaterValue(y)
+-    println(greaterValue)
++    println(greaterValue)           // 10
+ }
+ 
+ class Student {

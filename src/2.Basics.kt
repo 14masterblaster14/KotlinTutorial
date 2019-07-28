@@ -60,19 +60,6 @@ fun main(args: Array<String>) {
     println("A to Int : ${'A'.toInt()}")                // 65
     println("65 to Char : ${65.toChar()}")              // A
 
-    // String ::
-
-    var str1 = "A random string"
-    var str2 = "a random string"
-    println(" String Equal : ${str1.equals(str2)}")             // false
-
-    println("Compare A to B : ${"A".compareTo("B")}")           // -1
-
-    println(" 2nd Index : ${str1[2]}")                          // r
-
-    println(" Index 2 - 7 : ${str1.subSequence(2, 8)}")          //random
-
-    println("Contains random : ${str1.contains("random")}")     //true
 
     // Ranges
 
@@ -97,4 +84,86 @@ fun main(args: Array<String>) {
     println(isPresent)  // true
     println(countDown)  // 10 downTo 1 step 1
     println(moveUp)     // 1..10
+
+    // String
+
+    val ch = charArrayOf('H', 'e', 'l', 'l', 'o', 'w')
+    val string = String(ch)
+    println(string)     // Hello
+
+    println(string.length)
+    println(string.lastIndexOf('l', 1, true))
+    println(string.length)
+
+
+    var str1 = "A random string"
+    var str2 = "a random string"
+    var str3 = "a random string"
+
+    println(str2 == str3)        // Equality // True
+    println(str2 === str3)      // Referential Equality //true
+
+    println(" String Equal : ${str1.equals(str2)}")             // false
+
+    println("Compare A to B : ${"A".compareTo("B")}")           // -1
+    // 0  -> Two strings are equal
+    // -1 -> String is less than other string
+    // 1  -> String is greater than other string
+
+    println(" 2nd Index : ${str1[2]}")                          // r
+
+    println(" Index 2 - 7 : ${str1.subSequence(2, 8)}")          //random
+
+    println("Contains random : ${str1.contains("random")}")     //true
+
+    var str = "Chandrayan1 has been launched"
+    var updated_str = str.replace("Chandrayan1", "Chandrayan2")
+    println(updated_str)        //  Chandrayan2 has been launched
+    var updated_str1 = str.replace("CHANDRAYAN1", "CHANDRAYAN-2", true)
+    println(updated_str1)        //  CHANDRAYAN-2 has been launched
+    var updated_str2 = str.replace("CHANDRAYAN1", "CHANDRAYAN-2", false)
+    println(updated_str2)        //  Chandrayan1 has been launched
+
+    println("Substring is \"${str.subSequence(4, 7)}\"")     // Substring is "dra"
+
+    /*  Escaped characters
+    \t - Inserts tab
+    \b - Inserts backspace
+    \n - Inserts newline
+    \r - Inserts carriage return
+    \' - Inserts single quote character
+    \" - Inserts double quote character
+    \\ - Inserts backslash
+    \$ - Inserts dollar character
+    */
+    val escaped_string = "Hello Friend,\n\t As discussed,z\b my name is Sachin.\n\tI am an \"Indian\".\r\t I speaks \'Marathi\',Hindi and English.\\\$."
+    print(escaped_string)
+
+    /*OP:
+    Hello Friend,
+	 As discussed, my name is Sachin.
+	 I speaks 'Marathi',Hindi and English.\$.
+    */
+
+    val a = 10
+    val b = 5
+    val myString = """value $a
+        |is greater than value $b
+        """
+    println("${myString}")
+    /*
+    O/P : value 10
+                |is greater than value 5
+    */
+
+    val myString1 = """value $a
+        |is greater than value $b               // Default margin prefix is pipe character |
+        """.trimMargin()
+    //or
+    println(myString1.trimMargin())
+
+    /*
+   O/P : value 10
+         is greater than value 5
+   */
 }

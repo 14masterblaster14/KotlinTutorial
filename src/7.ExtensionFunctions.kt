@@ -21,6 +21,7 @@ fun main(args: Array<String>) {
 
 class Student {
 
+    var grade: String? = null
     fun hasPassed(marks: Int): Boolean {
         return marks > 40
     }
@@ -32,12 +33,14 @@ fun Student.isScholar(marks: Int): Boolean {
     return marks >= 95
 }
 
+
 // Extension to standard/ predefined String class, Int class
 
 fun String.add(s1: String, s2: String): String {
 
     return this + s1 + s2
 }
+
 
 fun Int.greaterValue(other: Int): Int {
 
