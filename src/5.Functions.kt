@@ -6,6 +6,13 @@ fun main(args: Array<String>) {
     println("Sum is : $sum")        // Sum is : 6
     display(null)               // Unit is equivalent to Void
 
+
+    run(3, 'a')     // parameter in function definition 3 and a
+    run(3)              // parameter in function definition 3 and x
+    //run('b')              // Error: Kotlin: The character literal does not conform to the expected type Int
+    run(latter = 'b')         // parameter in function definition 5 and b
+
+
     var largeValue = max(4, 6)
     display("The greater number is $largeValue")    // 6 is greater
     //  The greater number is 6
@@ -31,6 +38,11 @@ fun display(msg: String?): Unit {
     }
 }
 
+// Default Argument
+
+fun run(num: Int = 5, latter: Char = 'x') {
+    print("parameter in function definition $num and $latter")
+}
 
 // Functions as Expressions
 
