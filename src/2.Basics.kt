@@ -166,4 +166,30 @@ fun main(args: Array<String>) {
    O/P : value 10
          is greater than value 5
    */
+
+
+    /// Inputs
+
+    println("Enter your name:")
+    val name = readLine()
+    println("Enter your age :")
+    val age: Int = Integer.valueOf(readLine())
+    println("Your name is $name and your age is $age")  // Your name is sachin and your age is 24
+
+    println("Enter your correct age:")
+    var age2 = Scanner(System.`in`).nextInt()
+    println("Correct Age : $age2")              // Correct Age : 34
+    println("Enter your correct age:")
+    var age3 = Scanner(System.`in`).nextFloat()
+    println("Correct Age : $age3")          // Correct Age : 34.0
+    println("Enter your correct age:")
+    var age4 = Scanner(System.`in`).nextDouble()
+    println("Correct Age : $age4")          // Correct Age : 34.0
+    println("Enter your correct age:")
+    var age5 = Scanner(System.`in`).nextLong()
+    println("Correct Age : $age5")          // Correct Age : 34
+
+    println("Are you adult")
+    var isAdult = Scanner(System.`in`).nextBoolean()
+    println("Is Adult: $isAdult")           // Is Adult: true
 }
