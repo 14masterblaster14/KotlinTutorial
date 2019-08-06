@@ -1,5 +1,3 @@
-import java.lang.IllegalArgumentException
-
 fun main(args: Array<String>) {
 
     val divisor = 0
@@ -13,4 +11,22 @@ fun main(args: Array<String>) {
     } catch (e: IllegalArgumentException) {
         println("${e.message}")                     // Can't divide by zero
     }
+
+
+    //  multiple catch block
+
+    try {
+        val a = IntArray(5)
+        a[5] = 10 / 0
+    } catch (e: ArithmeticException) {
+        println("arithmetic exception catch")
+    } catch (e: ArrayIndexOutOfBoundsException) {
+        println("array index outofbounds exception")
+    } catch (e: Exception) {
+        println("parent exception class")
+    }
+    println("code after try catch...")
+}
+
+
 }
