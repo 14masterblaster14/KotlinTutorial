@@ -7,7 +7,7 @@
 //  then makes the recursive call. The result of current step is passed into the next recursive call.
 //  Tail recursion follows one rule for implementation. This rule is as follow:
 //  The recursive call must be the last call of the method.
-// To declare a recursion as tail recursion we need to use tailrec modifier before the recursive function.
+//  To declare a recursion as tail recursion we need to use tailrec modifier before the recursive function.
 
 fun main(args: Array<String>) {
 
