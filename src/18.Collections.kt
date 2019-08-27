@@ -147,12 +147,77 @@ fun main(args: Array<String>) {
     list1.add(0, "India")
     list1.add("America")
     list1.add(1, "Japan")
-    list2.add("Maharashtra")
 
     for (element in list1) {
         println(element)
     }
     // O/P : India Japan America
+
+    list2.add("Maharashtra")
+    list2.add("MP")
+    list2.add("Andhra")
+    list2.add("Gujarat")
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra MP Andhra Gujarat
+
+    var list5 = arrayListOf<String>("Delhi", "Kashmir")
+    var list6 = arrayListOf<String>("Karnataka", "Kerala")
+    var list7 = arrayListOf<String>("Maharashtra", "Kerala", "Rajastan")
+
+    list2.addAll(1, list5)
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Delhi Kashmir MP Andhra Gujarat
+
+    list2.addAll(list6)
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Delhi Kashmir MP Andhra Gujarat Karnataka Kerala
+
+    list2.remove("Karnataka")
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Delhi Kashmir MP Andhra Gujarat Kerala
+
+    list2.removeAt(3)
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Delhi Kashmir Andhra Gujarat Kerala
+
+    list2.removeAll(list5)
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Andhra Gujarat Kerala
+
+    list2.set(2, "Rajastan")
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Andhra Rajastan Kerala
+
+    list2.retainAll(list7)
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Rajastan Kerala
+
+    list5.clear()
+    for (element in list5) {
+        println(element)
+    }
+
+    println(list2.subList(0, 1)) // [Maharashtra]
+    for (element in list2) {
+        println(element)
+    }
+    // Maharashtra Rajastan Kerala
 
 
     //  ********  Map  ********
