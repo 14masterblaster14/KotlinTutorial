@@ -1,3 +1,28 @@
+import java.util.HashMap
+import kotlin.collections.ArrayList
+import kotlin.collections.arrayListOf
+import kotlin.collections.asIterable
+import kotlin.collections.contains
+import kotlin.collections.copyOfRange
+import kotlin.collections.drop
+import kotlin.collections.dropLast
+import kotlin.collections.first
+import kotlin.collections.hashMapOf
+import kotlin.collections.hashSetOf
+import kotlin.collections.indexOf
+import kotlin.collections.iterator
+import kotlin.collections.last
+import kotlin.collections.listOf
+import kotlin.collections.mapOf
+import kotlin.collections.minus
+import kotlin.collections.mutableListOf
+import kotlin.collections.mutableMapOf
+import kotlin.collections.mutableSetOf
+import kotlin.collections.plus
+import kotlin.collections.set
+import kotlin.collections.setOf
+import kotlin.collections.withIndex
+
 /*
 *
 *   Array : Mutable , but fixed size
@@ -229,6 +254,13 @@ fun main(args: Array<String>) {
         println("Element at Key : $key = ${myMap[key]}")    // myMap.get(key)
     }
 
+    /*
+    O/P:
+            Element at Key : 4 = Yogi
+            Element at Key : 43 = Manmohan
+            Element at Key : 7 = Vajpayee
+    */
+
     var myMap1 = mutableMapOf<Int, String>()    // Mutable, No Fixed size, Can Add/Remove elements
     var myMap2 = hashMapOf<Int, String>()         // Mutable, No Fixed size, Can Add/Remove elements
     var myMap3 = HashMap<Int, String>()                            // Mutable, No Fixed size, Can Add/Remove elements
@@ -243,15 +275,67 @@ fun main(args: Array<String>) {
         println("Element at Key : $key = ${myMap3[key]}")    // myMap3.get(key)
     }
 
+    /* O/P :
+            Element at Key : 4 = yogi
+            Element at Key : 7 = Vajpayee
+            Element at Key : 43 = Modi
+    */
+
+    myMap1.put(14, "MasterBlaster")
+    myMap2.put(21, "Dada")
+
     val myMap4 = mutableMapOf<Int, Any?>()
     myMap4[1] = "Master"
     myMap4[2] = 14
     for (key in myMap4.keys) {
         println("Element at Key : $key = ${myMap4[key]}")    // myMap4.get(key)
     }
+    /* O/P :
+            Element at Key : 1 = Master
+            Element at Key : 2 = 14
+    */
 
-    myMap1.put(14, "MasterBlaster")
-    myMap2.put(21, "Dada")
+    println(myMap4.get(2))              //14
+    println(myMap4.getOrDefault(3, "Default Value"))     //Default Value
+    println(myMap4.contains(2))         //true      // It doesn't return result
+    println(myMap4.contains(14))        //false
+    println(myMap4.containsKey(2))      //true      // It returns the result
+    println(myMap4.containsKey(14))     //false
+    println(myMap4.containsValue(2))    //false
+    println(myMap4.containsValue(14))   //true
+
+    for (element in myMap4.asIterable()) {
+        //It creates an instance of Iterable interface which wraps the original map returning its entries when being iterated.
+        println("key = ${element.key} value = ${element.value}")
+    }
+    /*  O/P :
+            key = 1 value = Master
+            key = 2 value = 14
+     */
+
+    for (element in myMap4.iterator()) {
+        //It returns an Iterator over the entries in the Map.
+        println("key = ${element.key} value = ${element.value}")
+    }
+    /*  O/P :
+            key = 1 value = Master
+            key = 2 value = 14
+     */
+
+    for (element in myMap4.minus(2)) {            //  skip the element
+        println(myMap4[element.key])
+    }
+    // Master
+
+
+    for (element in myMap4.plus(pair = Pair(4, "blaster"))) {     // Adds the element
+        println("Element at key ${element.key} = ${element.value}")
+    }
+    /*  O/P :
+            Element at key 1 = Master
+            Element at key 2 = 14
+            Element at key 4 = blaster
+     */
 
 
     //  ********  Set  ********
