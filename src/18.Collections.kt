@@ -1,27 +1,6 @@
 import java.util.HashMap
 import kotlin.collections.ArrayList
-import kotlin.collections.arrayListOf
-import kotlin.collections.asIterable
-import kotlin.collections.contains
-import kotlin.collections.copyOfRange
-import kotlin.collections.drop
-import kotlin.collections.dropLast
-import kotlin.collections.first
-import kotlin.collections.hashMapOf
-import kotlin.collections.hashSetOf
-import kotlin.collections.indexOf
-import kotlin.collections.iterator
-import kotlin.collections.last
-import kotlin.collections.listOf
-import kotlin.collections.mapOf
-import kotlin.collections.minus
-import kotlin.collections.mutableListOf
-import kotlin.collections.mutableMapOf
-import kotlin.collections.mutableSetOf
-import kotlin.collections.plus
 import kotlin.collections.set
-import kotlin.collections.setOf
-import kotlin.collections.withIndex
 
 /*
 *
@@ -337,6 +316,35 @@ fun main(args: Array<String>) {
             Element at key 4 = blaster
      */
 
+    println(myMap4)     // {1=Master, 2=14}
+
+    myMap4.replace(2, "Mumbai")
+    println(myMap4)     // {1=Master, 2=Mumbai}
+
+    myMap4.put(2, "Delhi")
+    println(myMap4)     // {1=Master, 2=Delhi}
+
+    myMap4.set(5, "Pune")  // myMap4[5] = "Pune"
+    println(myMap4)     // {1=Master, 2=Delhi, 5=Pune}
+
+    println(myMap4.getOrDefault(0, 0))   //0
+
+    println(myMap4.count())     //3
+
+    println(myMap4.size)    //3
+
+    println(myMap4.containsKey(2))      // true
+    println(myMap4.containsValue("Delhi"))  // true
+
+    myMap4.remove(1)
+    println(myMap4)     // {2=Delhi, 5=Pune}
+
+    myMap4.remove(2, "Delhi")
+    println(myMap4)     // {5=Pune}
+
+    myMap4.clear()
+    println(myMap4)     // {}
+
 
     //  ********  Set  ********
     //  "Set" contains Unique element
@@ -347,17 +355,63 @@ fun main(args: Array<String>) {
     for (element in mySet) {
         println(element)
     }
+    // 2 54 3 1 0 9 8
+
+    var anySet = setOf<Any>(1, 2, 4, 5, 54, 3, 1, 0, 9, 9, 9, 8, "A", "B", "C")
 
     var mySet1 = mutableSetOf<Int>(2, 54, 3, 1, 0, 9, 9, 9, 8)  // Mutable, No Fixed size, Can Add/Remove elements
     var mySet2 = hashSetOf<Int>(2, 54, 3, 1, 0, 9, 9, 9, 8)       // Mutable, No Fixed size, Can Add/Remove elements
 
     mySet2.remove(54)
+    println(mySet2) // [0, 1, 2, 3, 8, 9]
+
     mySet2.add(100)
+    println(mySet2) // [0, 1, 2, 3, 100, 8, 9]
 
-    for (element in mySet2) {
-        println(element)
-    }
+    println(mySet2.contains(100))   // true
 
-    mySet1.add(7)
-    mySet1.remove(8)
+    mySet2.addAll(mySet1)
+    println(mySet2) // [0, 1, 2, 3, 100, 54, 8, 9]
+
+    println(mySet2.containsAll(mySet1)) // true
+
+    mySet2.remove(100)
+    println(mySet2)     // [0, 1, 2, 3, 54, 8, 9]
+
+    mySet2.removeAll(mySet1)
+    println(mySet2)     // []
+
+    println(mySet2.isEmpty())    // true
+
+    println(mySet2.isNotEmpty()) // false
+
+    println(mySet2.any())   // false
+    println(anySet.any())   // true
+
+    println(anySet.contains("B"))       // true
+    println(anySet.containsAll(mySet1))  // true
+
+    println(anySet.isEmpty())   // false
+    println(anySet.isNotEmpty())    // true
+
+    println(anySet)     //  [1, 2, 4, 5, 54, 3, 0, 9, 8, A, B, C]
+    var remainingSet = anySet.drop(5)
+    println(remainingSet)   // [3, 0, 9, 8, A, B, C]
+    println(anySet)     // [1, 2, 4, 5, 54, 3, 0, 9, 8, A, B, C]
+
+    println(anySet.elementAt(3))    // 5
+    //println(anySet.elementAt(12))   // java.lang.IndexOutOfBoundsException
+
+    println(anySet.elementAtOrNull(5))  // 3
+    println(anySet.elementAtOrNull(12)) // null
+
+    println(anySet)     // [1, 2, 4, 5, 54, 3, 0, 9, 8, A, B, C]
+
+    println(anySet.first()) //1
+
+    println(anySet.indexOf(54)) //4
+
+    println(anySet.drop(4)) //  [54, 3, 0, 9, 8, A, B, C]
+
+    println(anySet) // [1, 2, 4, 5, 54, 3, 0, 9, 8, A, B, C]
 }
