@@ -15,7 +15,6 @@
 fun main(args: Array<String>) {
 
     // Objects
-
     CustomerData.count = 98
     println(CustomerData.count)
 
@@ -25,10 +24,13 @@ fun main(args: Array<String>) {
     CustomerData.myMethod("Hello")
 
     // Companion Objects
-
     println(MySuperClass.headCount)
 
     println(MySuperClass.typeOfCustomers())
+
+    //Companion Object extension
+    MySuperClass.helloWorld() //extension function declared upon the companion object
+
 }
 
 open class MySuperClass {
@@ -63,6 +65,10 @@ object CustomerData : MySuperClass() {    //Can't have constructors
         super.myMethod(str)
         println("Object Customer Data : $str")
     }
+}
 
+// Companion object extensions
 
+fun MySuperClass.Companion.helloWorld() {
+    println("executing extension of companion object")
 }

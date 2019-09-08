@@ -17,6 +17,16 @@ fun main(args: Array<String>) {
     val y = 10
     val greaterValue = x.greaterValue(y)
     println(greaterValue)           // 10
+
+    val list1 = mutableListOf(5, 10, 15)
+    println("before swapping the list :$list1")     // before swapping the list :[5, 10, 15]
+    val result1 = list1.swap(0, 2)
+    println("after swapping the list :$result1")    // after swapping the list :[15, 10, 5]
+
+    val list2 = null
+    println("before swapping the list :$list2")     //  before swapping the list :null
+    val result2 = list2.swap(0, 2)
+    println("after swapping the list :$result2")    // after swapping the list :null
 }
 
 class Student {
@@ -50,3 +60,21 @@ fun Int.greaterValue(other: Int): Int {
         return other
 }
 
+fun MutableList<Int>.swap(index1: Int, index2: Int): MutableList<Int> {
+
+    val tmp = this[index1] // 'this' represents to the list
+    this[index1] = this[index2]
+    this[index2] = tmp
+    return this
+}
+
+//  Extension Function as Nullable Receiver
+fun MutableList<Int>?.swap(index1: Int, index2: Int): Any {
+    if (this == null) return "null"
+    else {
+        val tmp = this[index1] // 'this' represents to the list
+        this[index1] = this[index2]
+        this[index2] = tmp
+        return this
+    }
+}
