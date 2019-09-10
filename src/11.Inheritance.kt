@@ -1,4 +1,4 @@
-// Default Classes are public and final
+// By default Classes are public and final
 // "open"
 // Super Class "Any" contains functions :
 //              equals() : Boolean

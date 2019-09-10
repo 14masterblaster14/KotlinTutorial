@@ -57,6 +57,7 @@ fun main(args: Array<String>) {
 
     println("Array length : ${myArray.size}")       //Array length : 5
     println("32 in Array : ${myArray.contains(32)}")    //32 in Array : true
+    println(myArray.average())      // 19.4
 
 
     var partMyArray = myArray.copyOfRange(0, 1)
@@ -70,7 +71,8 @@ fun main(args: Array<String>) {
     println("First : ${myArray.first()}")   // First : 32
     println("54 index : ${myArray.indexOf(54)}")    //54 index : 3
 
-
+    var myNullArray = arrayOfNulls<Int>(4)  // Uninitialized array : [null,null,null,null]
+    var myArray0 = Array(4) { i -> i * 2 }  // Array using closure : [0,2,4,8]
     var myArray1 = arrayOf(1, 10, 4, 6, 15)
     var myArray2 = arrayOf<Int>(1, 10, 4, 6, 15)
     val myArray3 = arrayOf<String>("Ajay", "Prakesh", "Michel", "John", "Sumit")

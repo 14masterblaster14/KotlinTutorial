@@ -1,8 +1,9 @@
 /*
 *
 *   Sealed classes are abstract
-*   --------------------------------
 *   Sealed Classes can be termed as Enum classes on steroids.
+*   Selaed classes are open by default
+*
 */
 
 

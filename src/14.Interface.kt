@@ -1,3 +1,5 @@
+// Interfaces are  open by default
+
 fun main(args: Array<String>) {
 
     var myButton = MyButton()

@@ -1,3 +1,4 @@
+// Abstract class and methods will be open by default
 // Abstract Methods have no body when declared
 // Abstract Property cannot be initialize when declared
 // Need to override the Abstract methods,properties inside derived classes

@@ -87,6 +87,22 @@ fun main(args: Array<String>) {
     println(countDown)  // 10 downTo 1 step 1
     println(moveUp)     // 1..10
 
+    val range = 1.0..5.0
+    println("3.14 in range is ${3.14 in range}")   // 3.14 in range is true
+
+    val chars = ('a'..'e')
+    val it = chars.iterator()
+    while (it.hasNext()) {
+        val x = it.next()
+        print("$x ")
+    }
+    // O/P : a b c d e
+
+    for (element in chars.reversed()) {
+        print("$element")
+    }
+    // O/P : e  d  c  b  a
+
     // String
 
     val ch = charArrayOf('H', 'e', 'l', 'l', 'o', 'w')
