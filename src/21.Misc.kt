@@ -4,6 +4,8 @@
 //  apply
 //  with
 
+// Refer let_run_also_apply_with.png
+
 fun main(args: Array<String>) {
 
     // let
@@ -27,7 +29,7 @@ fun main(args: Array<String>) {
     println(a)          // 5
 
 
-    // run
+    // run : executes the block to return the result
 
     var name = "I am MasterBlaster"
     println(name)       // I am MasterBlaster
@@ -55,8 +57,12 @@ fun main(args: Array<String>) {
     var x = course1.also { it }  // Course@5e2de80c
     var y = course1.also { println("Hi") }      // Hi
 
+    course1.also {
+        it.id += 2
+        it.branch = "Computer"
+    }
 
-    // apply=
+    // apply : to change the values
     val course2 = Course(2, "Dadaa", "Mechanical")
     println(course2)                // Course(id=2, name=Dadaa, branch=Mechanical)
     course2.apply {
@@ -66,7 +72,7 @@ fun main(args: Array<String>) {
     }
     println(course2)                // Course(id=3, name=Dadaa, branch=Mechatronics)
 
-    // with
+    // with (not preferred way)
     var course3 = Course(4, "Mumbai Indians", "IPL")
 
     var z = with(course3) {
@@ -87,3 +93,32 @@ data class Course(var id: Int, var name: String, var branch: String) {
         require(branch.length > 2) { "Name length should be more than 2 chars" }
     }
 }
+
+/* e.g:
+
+// Normal approach
+fun createInstance(args: Bundle) : MyFragment {
+    val fragment = MyFragment()
+    fragment.arguments = args
+    return fragment
+}
+
+// Improved approach
+fun createInstance(args: Bundle)
+        = MyFragment().apply { arguments = args }
+
+
+/ Normal approach
+fun createIntent(intentData: String, intentAction: String): Intent {
+    val intent = Intent()
+    intent.action = intentAction
+    intent.data=Uri.parse(intentData)
+    return intent
+}
+
+// Improved approach, chaining
+fun createIntent(intentData: String, intentAction: String) =
+        Intent().apply { action = intentAction }
+                .apply { data = Uri.parse(intentData) }
+
+*/
