@@ -3,6 +3,7 @@
 // 2. While loop
 // 3. Do while loop
 // 4. Break, Continue and Return statement
+// 5. Repeat statement
 
 fun main(args: Array<String>) {
 
@@ -129,4 +130,32 @@ fun main(args: Array<String>) {
          p: 3, q: 3
  */
 
+    //6. Repeat Statement : It is used when a set of statements has to be executed N-number of times.
+
+    repeat(4) {
+        println("Hello World!")
+    }
+
+    /* O/P :
+    Hello World!
+    Hello World!
+    Hello World!
+    Hello World!
+    */
+
+    repeat(5) { i ->
+        println("This line will be printed 10 times")
+        println("Currently, we are on the ${i + 1} loop iteration")
+    }
+
+    /*O/P:-
+    This line will be printed 4 times
+    Currently, we are on the 1 loop iteration
+    This line will be printed 4 times
+    Currently, we are on the 2 loop iteration
+    This line will be printed 4 times
+    Currently, we are on the 3 loop iteration
+    This line will be printed 4 times
+    Currently, we are on the 4 loop iteration
+    */
 }
