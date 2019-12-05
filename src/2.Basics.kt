@@ -109,9 +109,9 @@ fun main(args: Array<String>) {
     val string = String(ch)
     println(string)     // Hello
 
-    println(string.length)
-    println(string.lastIndexOf('l', 1, true))
-    println(string.length)
+    println(string.length)      //6
+    println(string.lastIndexOf('l', 1, true))   //-1
+    println(string.length)      //6
 
 
     var str1 = "A random string"
@@ -131,6 +131,7 @@ fun main(args: Array<String>) {
     println(" 2nd Index : ${str1[2]}")                          // r
 
     println(" Index 2 - 7 : ${str1.subSequence(2, 8)}")          //random
+    println(" Index 2 - 9 : ${str1.subSequence(2, 10)}")          //random s
 
     println("Contains random : ${str1.contains("random")}")     //true
 
