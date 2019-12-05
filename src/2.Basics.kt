@@ -149,7 +149,9 @@ fun main(args: Array<String>) {
     \t - Inserts tab
     \b - Inserts backspace
     \n - Inserts newline
-    \r - Inserts carriage return
+    \r - Inserts carriage return ( It is a control character or mechanism used to reset a device's position
+                                   to the beginning of a line of text. Here, if anything comes in front of
+                                   this character then it will erase it all and write the text after the character)
     \' - Inserts single quote character
     \" - Inserts double quote character
     \\ - Inserts backslash
