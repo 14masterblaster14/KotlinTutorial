@@ -130,7 +130,27 @@ fun main(args: Array<String>) {
          p: 3, q: 3
  */
 
-    //6. Repeat Statement : It is used when a set of statements has to be executed N-number of times.
+
+    //6. Return Statement : It is return the control.
+
+    for (p in 1..3) {
+        if (p == 3) return
+        for (q in 1..3) {
+            println(" p: $p, q: $q")
+        }
+    }
+
+/*O/P:
+         p: 1, q: 1
+         p: 1, q: 2
+         p: 1, q: 3
+         p: 2, q: 1
+         p: 2, q: 2
+         p: 2, q: 3
+*/
+
+
+    //7. Repeat Statement : It is used when a set of statements has to be executed N-number of times.
 
     repeat(4) {
         println("Hello World!")
@@ -143,8 +163,8 @@ fun main(args: Array<String>) {
     Hello World!
     */
 
-    repeat(5) { i ->
-        println("This line will be printed 10 times")
+    repeat(4) { i ->
+        println("This line will be printed 4 times")
         println("Currently, we are on the ${i + 1} loop iteration")
     }
 
