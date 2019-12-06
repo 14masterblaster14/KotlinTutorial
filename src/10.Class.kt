@@ -23,11 +23,17 @@ fun main(args: Array<String>) {
 
     val doggy = Dogs("Spot", 20.0, 14.5, "Master_Blaster")
 
-    println(OuterNested.InnerNested().innerName)
-    println(OuterNested.InnerNested().getInnerName())
+    var outerNested = OuterNested()
+    var innerNested = OuterNested.InnerNested()
+    println(OuterNested.InnerNested().innerName)        //  Blaster
+    println(OuterNested.InnerNested().getInnerName())   //  Calling Inner class , Blaster
 
-    println(OuterClass().InnerClass().innerName)
+    var outerClass = OuterClass()
+    var innerClass = OuterClass().InnerClass()
+    println(OuterClass().InnerClass().innerName)        //  Blaster
     println(OuterClass().InnerClass().getInnerName())
+    //  Calling Inner class , Blaster
+    //  Calling  class , Master
 
 
 }
@@ -35,7 +41,7 @@ fun main(args: Array<String>) {
 // Primary Constructors
 
 class Employee(_name: String) {
-    var name: String = "Dummy                   "
+    var name: String = "Dummy"
 
     init {
         this.name = _name
@@ -59,6 +65,7 @@ class Employee2(var name2: String) {
     //Secondary Constructor
     constructor(name22: String, _id: Int) : this(name22) {
         // Body of the secondary constructor is called after the init block
+        // and datatype declaration of parameters are not allowed
         this.id = _id
     }
 }
