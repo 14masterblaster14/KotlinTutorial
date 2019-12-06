@@ -7,19 +7,20 @@
 
 fun main(args: Array<String>) {
 
-    var employee = Employee("Master")
-    println("Employee : ${employee.name}")
+    var employee = Employee("Master")   //  Employee name is Master
+    println("Employee : ${employee.name}")    //  Employee : Master
 
     var employee1 = Employee1("Blaster")
-    println("Employee1 : ${employee1.name1} ")
+    println("Employee1 : ${employee1.name1} ")  //  Employee1 : Blaster
 
 
     var employee2 = Employee2("MasterBlaster", 7)
-    println("Employee2 Id : ${employee2.id}")
+    println("Employee2 Id : ${employee2.id}")   //  Employee2 has Name as MasterBlaster and Id as 0
+    //  Employee2 Id : 7
 
 
     val bowser = Animals("Bowser", 20.0, 13.5)
-    bowser.getInfo()
+    bowser.getInfo()    //  Bowser is 20.0 tall and weighs 13.5
 
     val doggy = Dogs("Spot", 20.0, 14.5, "Master_Blaster")
 
@@ -31,9 +32,8 @@ fun main(args: Array<String>) {
     var outerClass = OuterClass()
     var innerClass = OuterClass().InnerClass()
     println(OuterClass().InnerClass().innerName)        //  Blaster
-    println(OuterClass().InnerClass().getInnerName())
-    //  Calling Inner class , Blaster
-    //  Calling  class , Master
+    println(OuterClass().InnerClass().getInnerName())   //  Calling Inner class , Blaster
+    //  Calling  outerclass property , Master
 
 
 }
@@ -139,7 +139,7 @@ class OuterClass {
         var innerName = "Blaster"
         fun getInnerName() {
             println("Calling Inner class , $innerName")
-            println("Calling  class , $outerName")
+            println("Calling  outerclass property , $outerName")
 
         }
     }
