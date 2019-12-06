@@ -1,7 +1,7 @@
 // By default Classes are public and final
 // "open"
 // Super Class "Any" contains functions :
-//              equals() : Boolean
+//              equals()  : Boolean
 //              hashCode(): Int
 //              toString(): String
 // Primary Constructor can have properties
@@ -12,27 +12,32 @@ fun main(args: Array<String>) {
 
     // Case 1.
 
-    var animal = Animal()
+    var animal = Animal()   // From Animal Init block : Animal_White
     animal.color = "white"
-    animal.eat()
+    animal.eat()        //  Animal is Eating
 
-    var dog = Dog()
+    var dog = Dog()     //  From Animal Init block : null
+    //  From Dog Init block : Dog_Black and
     dog.breed = "labra"
     dog.color = "black"
-    dog.bark()
-    dog.eat()
+    dog.bark()          //  Bark
+    dog.eat()           //  Animal is Eating
+    //  Dog is Eating
 
-    var cat = Cat()
+    var cat = Cat()     //  From Animal Init block : Animal_White
     cat.age = 7
     cat.color = "brown"
-    cat.meow()
-    cat.eat()
+    cat.meow()          //  Animal is Eating
+    //  Meow
+    cat.eat()           //  Animal is Eating
 
     // case 2
-    var dog1 = Dog1("Dog_Black", "Pug")
+    var dog1 = Dog1("Dog_Black", "Pug") //  From Animal1 Init block : Dog_Black
+    //  From Dog1 Init block : Dog_Black and Pug
 
     // case 3
-    var dog2 = Dog2("Black", "Pug")
+    var dog2 = Dog2("Black", "Pug")     //  From Animal2 constructor block : Black
+    //  From Dog2 constructor block : Black and Pug
 }
 
 //-------------- Case 1
