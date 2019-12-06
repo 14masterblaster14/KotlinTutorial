@@ -3,11 +3,15 @@
 fun main(args: Array<String>) {
 
     var myButton = MyButton()
-    myButton.onTouch()
-    myButton.onClick()
+    myButton.onTouch()      //  MySecondInterface : onTouch called
+    //  Button was touched
+    myButton.onClick()      //  MyInterfaceListener : onClick called
+    //  MySecondInterface : onClick called
+    //  Button was clicked
+    myButton.onSelect()     //  onSelect selected
 
     val tweety = Bird("Tweety", true)
-    tweety.fly(10.0)
+    tweety.fly(10.0)         //  Tweety flies 10.0 miles
 }
 
 interface MyInterfaceListener {     // You cannot create instance of interface
@@ -20,9 +24,10 @@ interface MyInterfaceListener {     // You cannot create instance of interface
 
     fun onClick() {                 // Normal methods are public and open by default, NOT FINAL.
         // It has body and We may/may not implement it
-
         println("MyInterfaceListener : onClick called")
     }
+
+    fun onSelect()
 }
 
 interface MySecondInterface {
@@ -41,7 +46,7 @@ class MyButton : MyInterfaceListener, MySecondInterface {
     override var name: String = "dummy_name"
 
     override fun onTouch() {
-        super.onTouch() // it will call MySecondInterface OnTouch
+        super.onTouch()     // it will call MySecondInterface OnTouch
         println("Button was touched")
     }
 
@@ -52,6 +57,9 @@ class MyButton : MyInterfaceListener, MySecondInterface {
         println("Button was clicked")
     }
 
+    override fun onSelect() {
+        println("onSelect selected")
+    }
 }
 
 interface Flyable {
@@ -65,5 +73,4 @@ class Bird constructor(val name: String, override var flies: Boolean = true) : F
             println("$name flies $distMile miles")
         }
     }
-
 }
