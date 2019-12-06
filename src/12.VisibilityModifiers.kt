@@ -1,23 +1,31 @@
 // Kotlin Supports :
 //                  public
-//                  protected
+//                  protected   (accessible by derived class,
+//                               that to inside the derived class and not from outside)
 //                  internal    (within module)
 //                  private
 
 
-class TestClass {
+fun main(Args: Array<String>) {
+
 
     // person.a , person.b are not visible
     // person.c , person.d are visible
 
-    fun testing() {
 
-        var person = Person()
-        //println(person.a)
-        //println(person.a)
-        println(person.c)
-        println(person.d)
-    }
+    var person = Person()
+    // println(person.a)        // Cannot Access a as it's a private
+    // println(person.b)        // Cannot Access B as it's a protected
+    println(person.c)           //   3
+    println(person.d)           //   4
+
+    var indian = Indian()
+    // println(indian.a)        // Cannot Access a as it's a private
+    // println(indian.b)        // Cannot Access B from outside as it's a protected,
+    // but can be access from inside
+    println(indian.c)           // 3
+    println(indian.d)           // 4
+
 }
 
 open class Person {
@@ -34,7 +42,7 @@ class Indian : Person() {
     // b,c,d are visible
 
     fun test() {
-        //println(a)
+        // println(a)    // Cannot Access a as it's a private
         println(b)
         println(c)
         println(d)
