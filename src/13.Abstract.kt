@@ -5,10 +5,10 @@
 
 fun main(args: Array<String>) {
     var indians = Indians()
-    println(indians.name)
-    println(indians.eat())
-    println(indians.getHeight())
-    println(indians.goToSchool())
+    println(indians.name)           //  dummy_indian_name
+    println(indians.eat())          //  Indian Eating
+    println(indians.getHeight())    //  Indians : getHeight
+    println(indians.goToSchool())   //  Go to the School
 }
 
 abstract class Persons {         // You cannot create instance of abstract class
@@ -21,7 +21,9 @@ abstract class Persons {         // You cannot create instance of abstract class
         println("Persons : getHeight")
     }
 
-    fun goToSchool() {}          // A normal function : public and final by default
+    fun goToSchool() {          // A normal function : public and final by default
+        println("Go to the School")
+    }
 }
 
 class Indians : Persons() {
@@ -30,6 +32,7 @@ class Indians : Persons() {
 
     override fun eat() {
         //Body
+        println("Indian Eating")
     }
 
     override fun getHeight() {
@@ -37,5 +40,4 @@ class Indians : Persons() {
         println("Indians : getHeight")
 
     }
-
 }
