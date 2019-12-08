@@ -47,28 +47,6 @@ fun main(args: Array<String>) {
     //program.reverseAndDisplay("hello",{s -> s.reversed()})    // OR
     program.reverseAndDisplay("hello", { it.reversed() })       // olleh
 
-    // With and Apply
-
-    var human = Human()
-    human.name = "Master"
-    human.age = 21
-
-    println(human.name)         // Master
-    println(human.age)          // 21
-
-    with(human) {
-        name = "Blaster"
-        age = 31
-        println(name)           // Blaster
-        println(age)            // 31
-    }
-
-    human.apply {
-        name = "MasterBlaster"
-        age = 41
-        println(name)           // MasterBlaster
-        println(age)            // 41
-    }.startRun()                // Now, I am ready to run
 
     // ---------------------------------------------------
 
@@ -189,17 +167,6 @@ interface MyInterface {
 }
 
 
-// With and Apply
-
-class Human {
-
-    var name: String = ""
-    var age: Int = -1
-
-    fun startRun() {
-        println("Now, I am ready to run")
-    }
-}
 
 
 
