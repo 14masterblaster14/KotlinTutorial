@@ -12,6 +12,9 @@ fun main(args: Array<String>) {
         println("${e.message}")                     // Can't divide by zero
     }
 
+    // O/P : Can't divide by zero
+
+
 
     //  multiple catch block
 
@@ -26,6 +29,12 @@ fun main(args: Array<String>) {
         println("parent exception class")
     }
     println("code after try catch...")
+
+    /*
+    O/P :
+    arithmetic exception catch
+    code after try catch...
+    */
 }
 
 
