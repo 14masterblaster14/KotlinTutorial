@@ -3,6 +3,7 @@
 //  also
 // "apply" , returns the receiver to access methods
 // "with" , we can not access methods
+//
 // Refer let_run_also_apply_with.png
 
 fun main(args: Array<String>) {
