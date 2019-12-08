@@ -63,6 +63,7 @@ fun main(args: Array<String>) {
     }
 
     // apply : to change the values
+
     val course2 = Course(2, "Dadaa", "Mechanical")
     println(course2)                // Course(id=2, name=Dadaa, branch=Mechanical)
     course2.apply {
@@ -84,6 +85,30 @@ fun main(args: Array<String>) {
     println(course3)             // Course(id=4, name=Mumbai Indians, branch=One Day)
 
 
+    // With and Apply
+
+    var human = Human()
+    human.name = "Master"
+    human.age = 21
+
+    println(human.name)         // Master
+    println(human.age)          // 21
+
+    with(human) {
+        name = "Blaster"
+        age = 31
+        println(name)           // Blaster
+        println(age)            // 31
+    }
+
+    human.apply {
+        name = "MasterBlaster"
+        age = 41
+        println(name)           // MasterBlaster
+        println(age)            // 41
+    }.startRun()                // Now, I am ready to run
+
+
 }
 
 data class Course(var id: Int, var name: String, var branch: String) {
@@ -93,6 +118,20 @@ data class Course(var id: Int, var name: String, var branch: String) {
         require(branch.length > 2) { "Name length should be more than 2 chars" }
     }
 }
+
+
+// With and Apply
+
+class Human {
+
+    var name: String = ""
+    var age: Int = -1
+
+    fun startRun() {
+        println("Now, I am ready to run")
+    }
+}
+
 
 /* e.g:
 
