@@ -4,12 +4,14 @@ import kotlin.collections.set
 
 /*
 *
-*   Array : Mutable , but fixed size
-*   --------------------------------
-*
 *   ************************ Collections **************************
 *
-*   Immutable Collections < read only operations >
+*   Array   : Mutable,has fixed size and duplicate members are allowed.
+*   List    : List is a collection which is ordered and allows duplicate members.
+*   Map     : A key-value pair.
+*   Set     : A set is a collection which is unordered,unindexed and does not allowed duplicate members.
+*
+**   Immutable Collections < read only operations >
 *   ----------------------------------------------
 *   Immutable List : listOf
 *   Immutable Map  : mapOf
