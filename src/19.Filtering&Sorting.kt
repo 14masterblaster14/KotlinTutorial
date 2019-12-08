@@ -8,6 +8,9 @@
 *                 "count"   - Total elements that satisfy the predicate/condition?
 *                 "find"    - Return the first elements that satisfy the predicate/condition?
 *
+*   Fold        : It takes an initial value and uses it as the accumulated value on the first step.
+*   Reduce      : The first step of reduce() uses the first and the second elements as operation arguments on the first step.
+*
 *   "flatmap"   : Filter elements from collection of collection
 *
 *   "distinct"  : Returns the unique results
@@ -193,7 +196,7 @@ fun main(args: Array<String>) {
     _sortDescending2.forEach { println(it) }      // 41 65 1 7 12 3 15
 
 
-    // fold
+    // fold & Reduce
 
     val _fold = myNumbers.fold(4) { total, next -> total + next }      //Initial value + summation from left to right (first to last element)
     println(_fold)  // 132 (4+128)
@@ -262,6 +265,21 @@ fun main(args: Array<String>) {
 	Customer(name=Craig, age=45)
 */
 
+
+    // Distinct
+
+    val a = arrayOf("a", "a", "b", "c", "c")
+    val b = a.distinct()
+    println(b)      // ["a", "b", "c"]
+
+    val c = listOf("a", "b", "ab", "ba", "abc")
+    val d = c.distinctBy { it.length }
+    println(d)      // ["a", "ab", "abc"]
+
+
+    var list4 = listOf<Int>(1, 2, 4, 5, 8, 9, 3, 45, 65, 1, 2, 4, 5, 8, 9, 3, 45, 65)
+    val e = list4.distinct()
+    println(e)      // [1, 2, 4, 5, 8, 9, 3, 45, 65]
 }
 
 class Humans(var name: String, var age: Int)
