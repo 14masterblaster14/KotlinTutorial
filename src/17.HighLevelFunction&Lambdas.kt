@@ -10,10 +10,7 @@
 //          But in Kotlin you can Change it.
 //
 // "it" : Implicit name of Single Parameter
-//
-// "with" , we can not access methods
-//
-// "apply" , returns the receiver to access methods
+
 
 fun main(args: Array<String>) {
 
