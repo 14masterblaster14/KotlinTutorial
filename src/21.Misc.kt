@@ -52,7 +52,8 @@ fun main(args: Array<String>) {
     println(firstName)          // Master
 
 
-    // also
+    // also ( we need to access the object with its reference)
+
     val course1 = Course(1, "MasterBlaster", "Electronics")
     var x = course1.also { it }  // Course@5e2de80c
     var y = course1.also { println("Hi") }      // Hi
@@ -62,10 +63,13 @@ fun main(args: Array<String>) {
         it.branch = "Computer"
     }
 
-    // apply : to change the values
+    println(course1)    //  Course(id=3, name=MasterBlaster, branch=Computer)
+
+    // apply : to change the values without reference
 
     val course2 = Course(2, "Dadaa", "Mechanical")
     println(course2)                // Course(id=2, name=Dadaa, branch=Mechanical)
+
     course2.apply {
         id = 3
         name = "Bengal Tiger"
@@ -75,14 +79,15 @@ fun main(args: Array<String>) {
 
     // with (not preferred way)
     var course3 = Course(4, "Mumbai Indians", "IPL")
+    println(course3)            // Course(id=4, name=Mumbai Indians, branch=One Day)
 
     var z = with(course3) {
         id = 5
         name = "Chennai SuperKings"
         branch = "One Day"
-    }                            // Course(id=4, name=Mumbai Indians, branch=One Day)
+    }
 
-    println(course3)             // Course(id=4, name=Mumbai Indians, branch=One Day)
+    println(course3)    //  Course(id=5, name=Chennai SuperKings, branch=One Day)
 
 
     // With and Apply
