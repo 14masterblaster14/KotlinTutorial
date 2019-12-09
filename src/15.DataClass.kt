@@ -25,4 +25,10 @@ fun main(args: Array<String>) {
 
 }
 
-data class User(var name: String, var id: Int)
+data class User(var name: String, var id: Int) {
+
+    init {
+        require(name.length > 4) { "Name length should be more than 4 chars" }
+        require(id > 0) { "Id number should be greater than zero" }
+    }
+}
