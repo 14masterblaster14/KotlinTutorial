@@ -1,0 +1,2 @@
+This is sample data file.Now, we can play with this file as you want.
+	 Please close the file after your work is done.
