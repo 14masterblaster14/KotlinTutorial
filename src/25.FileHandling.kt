@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     var file_text = "This is Sample File."
     file_object.writeText(file_text)
 
-    var fileName1 = "D:\\Android\\Projects\\Kotlin_Tuts\\data.txt"
+    var fileName1 = "D:\\Android and Java Worspace\\IntelliJ Workspace\\data.txt"
     var file_objects = File(fileName1)
     var file_text1 = "This is sample data file.Now, we can play with this file as you want.\n\t Please close the file after your work is done."
     file_objects.writeText(file_text1)
@@ -81,18 +81,18 @@ fun main(args: Array<String>) {
 
     var bytes: ByteArray = file_object.readBytes()
     for (byte in bytes) {
-        print(byte.toChar())
+        println(byte.toChar())
     }                           // This is Sample File.
 
     //File.readLines() : To read lines in file to List
     var lines = file_object.readLines()
     for (line in lines) {
         println(line)
-    }
+    }                           // This is Sample File.
 
     //File.readText() : To read contents of file to a single String
     var contents = file_object.readText()
-    println(contents)
+    println(contents)           // This is Sample File.
 
 
     ///  Write content to the File
