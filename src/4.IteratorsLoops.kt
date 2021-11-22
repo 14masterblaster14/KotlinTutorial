@@ -36,6 +36,41 @@ var planets = arrayOf("Earth", "Mars", "Venus", "Jupiter", "Saturn")
         Saturn
 */
      
+     for ((index,value) in planets.withIndex()) {
+        println("Element at $index th index is $value")
+    }
+     
+/* O/P :     
+Element at 0 th index is Earth
+Element at 1 th index is Mars
+Element at 2 th index is Venus
+Element at 3 th index is Jupiter
+Element at 4 th index is Saturn
+*/
+   
+   var name = "Sachin"
+    var name2 = "MasterBlaster"
+      
+    // traversing string without using index property
+    for (alphabet in name)   print("$alphabet ")            // S a c h i n
+  
+    // traversing string with using index property
+    for (i in name2.indices) print(name2[i]+" ")
+    println(" ")                                        // M a s t e r B l a s t e r
+      
+    // traversing string using withIndex() library function
+    for ((index,value) in name.withIndex())
+    println("Element at $index th index is $value")
+    
+/* O/P :    
+Element at 0 th index is S
+Element at 1 th index is a
+Element at 2 th index is c
+Element at 3 th index is h
+Element at 4 th index is i
+Element at 4 th index is n
+*/   
+   
     var m = 1
     var n = 4
     for (i in m until n) {
