@@ -56,7 +56,7 @@ fun main(args: Array<String>) {
 
     // O/P : Go to grade : 2
 
-    // when
+    // when as a statement : else block is optional
 
 
     val x = 0
@@ -73,7 +73,7 @@ fun main(args: Array<String>) {
     }
     //  O/P : X is 0 ro 1
 
-    // when as an expression
+    // when as an expression : else block is mandatory
 
     val y = 100
 
