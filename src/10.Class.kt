@@ -36,6 +36,19 @@ fun main(args: Array<String>) {
     bowser.getInfo()    //  Bowser is 20.0 tall and weighs 13.5
 
     val doggy = Dogs("Spot", 20.0, 14.5, "Master_Blaster")
+    
+    //Calling parent class secondary constructor from child class secondary constructor –
+    Child(18018, "Sagnik")
+ 
+/* O/P :-    
+Employee id is: 18018
+Employee name: Sagnik
+Employee salary: 500000.55
+
+Employee id is: 18018
+Employee name: Sagnik
+
+*/
 
     var outerNested = OuterNested()
     var innerNested = OuterNested.InnerNested()
@@ -155,6 +168,28 @@ class Dogs(name: String, height: Double, weight: Double, var owner: String) : An
         super.getInfo()
         println("$name is $height tall and weighs $weight and is owner $owner")
 
+    }
+}
+
+// Calling parent class secondary constructor from child class secondary constructor –
+
+open class Parent {
+    constructor (emp_id: Int, emp_name: String, emp_salary: Double) {
+        var id: Int = emp_id
+        var name: String = emp_name
+        var salary : Double = emp_salary
+        println("Employee id is: $id")
+        println("Employee name: $name")
+        println("Employee salary: $salary")
+        println()
+    }
+}
+class Child : Parent {
+    constructor (emp_id : Int, emp_name: String):super(emp_id,emp_name,500000.55){
+        var id: Int = emp_id
+        var name: String = emp_name
+        println("Employee id is: $id")
+        println("Employee name: $name")
     }
 }
 
