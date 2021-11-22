@@ -169,12 +169,26 @@ Element at 4 th index is n
 */
 
 
-    //5. Continue Statement
+    //5. Continue Statement : Labelled and Unlabelled
+    
+    
+    var num = 0
+    while (num <= 12) {
+        if (num % 3 == 0) {
+            num++
+            continue    //  Unlabelled continue
+        }
+        print(num)
+        num++
+    }
+    
+    // 1 2 4 5 7 8 10 11
+    
     outer@ for (p in 1..3) {
         for (q in 1..3) {
             println(" p: $p, q: $q")
             if (p == 2 && q == 2)
-                continue@outer
+                continue@outer      //  Labelled continue
         }
     }
 
