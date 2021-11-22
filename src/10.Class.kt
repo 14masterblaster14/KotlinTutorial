@@ -9,6 +9,8 @@
 //      Primary Constructor with Property (field variables)
 //      Primary Constructor with just Parameters
 
+// secondary Constructor: We can have multiple secondary constructors.
+
 fun main(args: Array<String>) {
 
     var employee = Employee("Master")   //  Employee name is Master
@@ -24,10 +26,12 @@ fun main(args: Array<String>) {
     val emp3 = employee11()                       // Employee id is: 100, Employee name: abc
 
     var employee2 = Employee2("MasterBlaster", 7)
-    println("Employee2 Id : ${employee2.id}")   //  Employee2 has Name as MasterBlaster and Id as 0
+    println("Employee2 Id : ${employee2.id}")   //  Employee2 has Name as MasterBlaster and Id as 0  
+                                                // println("This is first Secondary constructor")
     //  Employee2 Id : 7
-
-
+       
+    var employee21 = Employee2("MasterBlaster", 7, 4000)   // println("This is third Secondary constructor")
+                                                            // println("This is second Secondary constructor")
     val bowser = Animals("Bowser", 20.0, 13.5)
     bowser.getInfo()    //  Bowser is 20.0 tall and weighs 13.5
 
@@ -100,11 +104,9 @@ class employee11(emp_id : Int = 100 , emp_name: String = "abc") {
 
 // Secondary Constructors
 
-class Employee2(var name2: String) {
+class Employee2(var name2: String) {  //Primary Constructor
 
     var id = 0
-
-    //Primary Constructor
     init {
         println("Employee2 has Name as $name2 and Id as $id")
     }
@@ -114,6 +116,16 @@ class Employee2(var name2: String) {
         // Body of the secondary constructor is called after the init block
         // and datatype declaration of parameters are not allowed
         this.id = _id
+        println("This is first Secondary constructor")           
+    }
+    
+    // calling another secondary using this
+    constructor (name22 : String, _id :Int, salary: Int) : this(name22,_ id, salary, "Mumbai"){
+           println("This is second Secondary constructor")    
+    }
+    
+     constructor (name22 : String, _id :Int, salary: Int, city:String){
+           println("This is third Secondary constructor")  
     }
 }
 
