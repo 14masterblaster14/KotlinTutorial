@@ -49,6 +49,19 @@ class Company {
         set(value) { field = value }      // setter
 }
 
+// Custom Setter and Getter
+
+var email_id: String = email
+        // Custom Getter
+        get() {
+           return field.toLowerCase()
+        }
+    var password: String = pwd
+        // Custom Setter
+        set(value){
+            field = if(value.length > 6) value else throw IllegalArgumentException("Passwords is too small")
+        }
+
 // Primary Constructors
 
 class Employee(_name: String) {
