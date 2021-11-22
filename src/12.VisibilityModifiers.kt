@@ -5,6 +5,13 @@
 //                  internal    (within module)
 //                  private
 
+// Constructor Visibility
+   // By default constructors are public, but we can also change the visibility of a constructor by using the modifiers. 
+   // e.g.
+             //   class A private constructor (name : String) {
+            // other code
+            //     }
+
 
 fun main(Args: Array<String>) {
 
