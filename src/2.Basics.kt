@@ -58,11 +58,18 @@ fun main(args: Array<String>) {
         println("true is Boolean")                      // true is Boolean
     }
 
+    //Type Conversion (Type casting)  
+	//Java supports implicit type conversion from smaller to larger data type. An integer value can be assigned to long data type.
+	//But, Kotlin does not support implicit type conversion. An integer value can not be assigned to long data type. 
+	// Helper function can be used to explicitly convert one data type to another to another data type.
+	// toByte(),toShort(),toInt(),toLong(),toFLoat(),toDouble(),toChar()
+	// Note: There is No helper function available to convert into boolean type.
+    
     println("3.14 to Int : ${3.14.toInt()}")            // 3
     println("A to Int : ${'A'.toInt()}")                // 65
     println("65 to Char : ${65.toChar()}")              // A
     
-    // Operators
+    // Assignment Operators 
     
 +=	a = a + b	
 -=	a = a – b	
@@ -84,6 +91,16 @@ fun main(args: Array<String>) {
     println(a)   //0
 
 
+    // Unary Operators – 
+    	++	++a or a++	
+	—	–a or a–
+	
+    var e=10
+    println("First print then increment: "+ e++)  	//First print then increment: 10
+    println("First increment then print: "+ ++e)	//First increment then print: 12
+    println("First print then decrement: "+ e--)	//First print then decrement: 12
+    println("First decrement then print: "+ --e)	//First decrement then print: 10
+    
     // Ranges
 
     val r1 = 1..5                   // 1,2,3,4,5
