@@ -27,8 +27,11 @@ import kotlin.collections.set
 
 fun main(args: Array<String>) {
 
-    //  ********  Array  ********
-    //  Mutable , but fixed size
+    //  ********  Array  ******** (Mutable , but fixed size)
+        //  They are stored in contiguous memory locations.
+        //  They can be accessed programmatically through their indexes (array[1], array[0], etc.)
+        //  They are mutable.
+        //  Their size is fixed. 
 
     // Element  :   32  0   0   54  0
     // Index    :   0   1   2   3   4
