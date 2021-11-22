@@ -4,6 +4,7 @@
             //Identity : It gives a unique name to an object and enables one object to interact with other objects.
 
 // Primary Constructors:
+//      with default value
 //      init Block
 //      Primary Constructor with Property (field variables)
 //      Primary Constructor with just Parameters
@@ -16,6 +17,11 @@ fun main(args: Array<String>) {
     var employee1 = Employee1("Blaster")
     println("Employee1 : ${employee1.name1} ")  //  Employee1 : Blaster
 
+    val emp = employee11(18018, "Sagnik")         // Employee id is: 18018, Employee name: Sagnik
+    // default value for emp_name will be used here
+    val emp2 = employee11(11011)                  // Employee id is: 11011, Employee name: abc
+    // default values for both parameters because no arguments passed
+    val emp3 = employee11()                       // Employee id is: 100, Employee name: abc
 
     var employee2 = Employee2("MasterBlaster", 7)
     println("Employee2 Id : ${employee2.id}")   //  Employee2 has Name as MasterBlaster and Id as 0
@@ -75,6 +81,22 @@ class Employee(_name: String) {
 
 class Employee1 constructor (var name1: String)  // Or <The constructor keyword can be omitted if there is no annotations or access modifiers specified.> 
 // class Employee1(var name1: String)
+
+// Primary Constructor with Default Value
+
+class employee11(emp_id : Int = 100 , emp_name: String = "abc") {
+    val id: Int
+    var name: String
+ 
+    // initializer block
+    init {
+        id = emp_id
+        name = emp_name
+ 
+        print("Employee id is: $id, ")
+        println("Employee name: $name")
+        println()
+    } 
 
 // Secondary Constructors
 
