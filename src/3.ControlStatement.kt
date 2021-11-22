@@ -72,6 +72,16 @@ fun main(args: Array<String>) {
         }
     }
     //  O/P : X is 0 ro 1
+    
+    
+    fun isOdd(x: Int) = x % 2 != 0
+    fun isEven(x: Int) = x % 2 == 0
+    var num = 8
+    when{
+        isOdd(num) ->println("Odd")
+        isEven(num) -> println("Even")
+        else -> println("Neither even nor odd")
+    }               //Even
 
     // when as an expression : else block is mandatory
 
