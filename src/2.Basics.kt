@@ -61,6 +61,27 @@ fun main(args: Array<String>) {
     println("3.14 to Int : ${3.14.toInt()}")            // 3
     println("A to Int : ${'A'.toInt()}")                // 65
     println("65 to Char : ${65.toChar()}")              // A
+    
+    // Operators
+    
++=	a = a + b	
+-=	a = a – b	
+*=	a = a * b	
+/=	a = a / b	
+%=	a = a % b	
+	
+    var a = 10
+    var b = 5
+    a+=b         
+    println(a)  // 15
+    a-=b
+    println(a)   //10
+    a*=b
+    println(a)	 //50
+    a/=b
+    println(a)   //10
+    a%=b
+    println(a)   //0
 
 
     // Ranges
