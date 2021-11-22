@@ -158,9 +158,10 @@ fun main(args: Array<String>) {
     var str2 = "a random string"
     var str3 = "a random string"
 
-    println(str2 == str3)        // Equality // True
-    println(str2 === str3)      // Referential Equality //true
+    println(str2 == str3)        // Structural Equality : translated into the call of equals() function // True
+    println(str2 === str3)      // Referential Equality //true as both are pointing to the same StringPool
 
+    println(" String Equal : ${str3.equals(str2)}")             // true
     println(" String Equal : ${str1.equals(str2)}")             // false
 
     println("Compare A to B : ${"A".compareTo("B")}")           // -1
