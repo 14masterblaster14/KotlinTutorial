@@ -83,6 +83,16 @@ Element at 4 th index is n
         3
 */
 
+    val arrayname = arrayOf<Int>(1, 2, 3, 4, 5)
+    arrayname.forEach({ index -> println(index) })
+/* O/P :
+        1
+        2
+        3
+        4
+        5
+*/
+
     //2. While loop
     var j = 2
     while (j <= 4) {
