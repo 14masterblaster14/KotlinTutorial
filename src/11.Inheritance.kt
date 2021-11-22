@@ -1,3 +1,21 @@
+//  Java Recap :    Object class is the parent class for all Java objects. 
+//                  The equals() and hashcode() are the two important methods provided by the Object class for comparing objects. 
+//                  equals() :  
+//                             -The java equals() is a method of lang.Object class, and it is used to compare two objects.
+//                             -To compare two objects that whether they are the same, it compares the values of both the object's attributes.
+//                             -By default, two objects will be the same only if stored in the same memory location.
+//                  hashcode():
+//                              -A hashcode is an integer value associated with every object in Java, facilitating the hashing in hash tables.
+//                              -To get this hashcode value for an object, we can use the hashcode() method in Java. It is the means hashcode() method that returns the integer hashcode value of the given object.
+//                              -Since this method is defined in the Object class, hence it is inherited by user-defined classes also.
+//                              -The hashcode() method returns the same hash value when called on two objects, which are equal according to the equals() method. And if the objects are unequal, it usually returns different hash values.
+
+// If two objects are the same as per the equals(Object) method, then if we call the hashCode() method on each of the two objects, it must provide the same integer result.
+// Note: As per the Java documentation, both the methods should be overridden to get the complete equality mechanism; using equals() alone is not sufficient. It means, if we override the equals(), we must override the hashcode() method.
+//**********************************************************************************************************************************************
+
+// KOTLIN
+
 // By default Classes are public and final
 // "open"
 // Super Class "Any" contains functions :
