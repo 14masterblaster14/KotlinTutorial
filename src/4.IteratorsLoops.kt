@@ -22,6 +22,20 @@ fun main(args: Array<String>) {
         i Numeber : 7
 */
 
+var planets = arrayOf("Earth", "Mars", "Venus", "Jupiter", "Saturn")
+  
+    for (i in planets.indices) {
+        println(planets[i])
+    }
+    
+/* O/P :   
+        Earth
+        Mars
+        Venus
+        Jupiter
+        Saturn
+*/
+     
     var m = 1
     var n = 4
     for (i in m until n) {
