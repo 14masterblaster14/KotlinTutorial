@@ -41,6 +41,14 @@ fun main(args: Array<String>) {
 
 }
 
+// Getter,Setter
+
+class Company {
+    var name: String = "defaultvalue"
+        get() = field                     // getter
+        set(value) { field = value }      // setter
+}
+
 // Primary Constructors
 
 class Employee(_name: String) {
