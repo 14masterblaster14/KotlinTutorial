@@ -141,7 +141,9 @@ fun main(args: Array<String>) {
     }
     // O/P : e  d  c  b  a
 
-    // String
+    // String : 
+    		// An array of characters is called a string.
+		// Kotlin strings are also immutable in nature means we can not change elements and length of the String. 
 
     val ch = charArrayOf('H', 'e', 'l', 'l', 'o', 'w')
     val string = String(ch)
