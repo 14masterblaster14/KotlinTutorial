@@ -6,7 +6,7 @@
 //              toString(): String
 // Primary Constructor can have properties
 // Secondary Constructor cannot have the properties
-// Method overriding
+// Member & Method overriding
 
 
 fun main(args: Array<String>) {
