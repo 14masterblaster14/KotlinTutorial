@@ -73,7 +73,8 @@ class Employee(_name: String) {
     }
 }
 
-class Employee1(var name1: String)
+class Employee1 constructor (var name1: String)  // Or <The constructor keyword can be omitted if there is no annotations or access modifiers specified.> 
+// class Employee1(var name1: String)
 
 // Secondary Constructors
 
