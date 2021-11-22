@@ -4,6 +4,10 @@
 
 fun main(args: Array<String>) {
 
+    val a = 1000
+    val b = 999
+    var max1 = if(a > b) a else b
+    
     var p = 7
     var q = 2
 
