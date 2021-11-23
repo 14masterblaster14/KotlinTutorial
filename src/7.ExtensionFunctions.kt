@@ -1,4 +1,6 @@
-// Extension Functions
+// Extension Functions :
+//    We can add more functionality to the existing classes, by without inheriting them and without modifying the actual class.
+
 
 fun main(args: Array<String>) {
 
