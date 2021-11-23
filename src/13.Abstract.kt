@@ -4,6 +4,7 @@
 // Need to override the Abstract methods,properties inside derived classes
 // You cannot create instance of abstract class
 // If any property or method is abstract then class needs to define abstract.
+// An abstract class can contain both abstract and non-abstract members.
 
 fun main(args: Array<String>) {
     var indians = Indians()
