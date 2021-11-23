@@ -1,4 +1,9 @@
 // Interfaces are  open by default
+// You cannot create instance of interface
+// properties in interface are abstract by default
+// methods in interface are Abstract by default
+// Normal methods are public and open by default, NOT FINAL.
+
 
 fun main(args: Array<String>) {
 
