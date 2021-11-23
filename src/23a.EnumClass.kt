@@ -133,3 +133,13 @@ enum class Seasons(var weather: String) {
     };
     abstract fun foo()
 }
+
+// Enum Classes
+
+enum class MobileColor(val value: Int) {
+    GOLD(0xffd323),
+    SILVER(0xeaeaea),
+    WHITE(0xffffff),
+    BLACK(0x000000),
+    RED(0xFF0000)
+}
