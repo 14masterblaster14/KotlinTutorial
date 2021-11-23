@@ -102,11 +102,11 @@ fun main(args: Array<String>) {
     // Elvis operator
 
     var name = "MasterBlaster"
-    var name1 = ""
+    var name1 = null
 
     val name_length = name.length
     val name1_length = name1.length
-    println(name_length)
-    println(name1_length)
-
+    
+    println(name1?.length:name.length) // 12
+    
 }
