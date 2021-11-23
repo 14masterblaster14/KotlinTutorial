@@ -3,6 +3,34 @@
     Refer : https://stackoverflow.com/questions/49169086/sealed-class-vs-enum-when-using-associated-type
     Enum Class Vs Sealed Class 
     
+    
+    * Properties :
+                In enum classes, each enum value cannot have its own unique property. You are forced to have the same property for each enum value.
+                In case of sealed classes, we can have different properties for each subtype.
+    
+    * Functions :
+                Enums can have abstract functions as well as regular functions. But like properties, each enum value also has to have the same function.
+                In sealed classes we can have different functions for different subtypes.
+    
+    * Inheritance:
+                Since enum values are objects, they cannot be extended.
+                Since sealed class' subtypes are types, they can be extended.
+                
+    * Number of Instances:
+                Since enum values are objects and not types, we cannot create multiple instances of them.
+                Subtypes of sealed classes are types, so we can create multiple instances of these types. We can also make a type to have only a single instance using an object declaration
+    
+    * Serializable and Comparable:
+                Every enum class in Kotlin is implicitly extended by the abstract class java.lang.Enum. So, all the enum values automatically have the implementations for equals(), toString(), hashCode(), Serializable and Comparable. We don't have to define them.
+                For sealed classes we need to define them manually or use data class for the automatic equals(), toString() and hashcode() and then implement Serializable and Comparable manually.
+
+    * Performance
+                Enums don't get garbage collected, they stay in memory for the lifespan of your app. This can be an upside or a downside.
+                Sealed classes are just regular classes with the only exception that they need to be extended in the same package and the same compilation unit. So, their performance is equivalent to regular classes.
+
+
+*** Detailed Explaination ***
+
 Properties
 Enum
 
