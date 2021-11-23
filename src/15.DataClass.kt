@@ -4,6 +4,14 @@
 //              toString(): String
 // Data class has all these with "copy" as well
 
+//Data classes have to fulfill the following requirements to ensure the consistency:
+    // The primary constructor needs to have at least one parameter.
+    // All primary constructor parameters need to be marked as val or var.
+    // Data classes cannot be abstract, open, sealed or inner.
+    // Data classes may only implement interfaces.
+
+
+
 fun main(args: Array<String>) {
 
     var user1 = User("Master", 7)
