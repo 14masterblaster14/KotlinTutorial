@@ -1,4 +1,6 @@
-
+READ Notes: 
+https://agrawalsuneet.github.io/tags/kotlin/
+https://agrawalsuneet.github.io/tags/android/
 
 // REPL --> Read ,Evaluate, Print, Loop
 fun Kotlin.main (args : Array<String>)
