@@ -10,6 +10,8 @@
     compareTo() – To compare two numbers and return boolean value.
 */
 
+// VarArgs
+
 fun main(args: Array<String>) {
 
     var sum = add(2, 4)
@@ -27,6 +29,8 @@ fun main(args: Array<String>) {
     display("The greater number is $largeValue")    // 6 is greater
     //  The greater number is 6
 
+    // VarArgs
+    
     println("Sum = ${getSum(1, 2, 3, 4, 5, 6, 7)}")   // Sum = 28
 
     println("Average = ${getFloatAverage(4.0F, 1F, 2F, 3F, 4F, 5F, 6F, 7F)}")  // Average = 4.0
@@ -65,12 +69,16 @@ fun max(a: Int, b: Int): Int = if (a > b) {
 }
 
 
-// varArg : The vararg parameters must be the last parameter in the parameter list
+// varArg : 
+//            Sometimes we need a function where we can pass n number of parameters, and the value of n can be decided at runtime. 
+//            We can do it by defining a parameter of a function as vararg
+
+//          The vararg parameters must be the last parameter in the parameter list
 
 //          Arrays can be passed into vararg functions using the Spread Operator, *
 //          The spread operator can also be used in the middle of the parameters which will be part of last vararg.
 
-fun getSum(vararg numbers: Int): Int {
+fun getSum(vararg numbers: Int): Int {      // fun getSum(numbersList: List): Int
     var sum = 0
     numbers.forEach { n -> sum += n }
     return sum
