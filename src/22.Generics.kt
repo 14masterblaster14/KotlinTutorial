@@ -1,13 +1,25 @@
+/*     **-- Generics --**  
+
+Variance is of two types-
+
+Declaration-site variance(using in and out)
+Use-site variance: Type projection
+
+*/
+
+
+
+
 fun main(args: Array<String>) {
 
     var x = A("")
-    x.display()
+    x.display()         // 
 
     var y = A(7)
-    y.display()
+    y.display()        // 7
 
     var z = A(14.14)
-    z.display()
+    z.display()         // 14.14
 }
 
 class A<T>(argument: T) {
