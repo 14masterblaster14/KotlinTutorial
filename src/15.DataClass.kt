@@ -10,7 +10,9 @@
     // Data classes cannot be abstract, open, sealed or inner.
     // Data classes may only implement interfaces.
 
-
+// hashCode() and equals() :
+    // hashCode() function returns a hash code value for the object.
+    // equals() method return true if two objects have same contents and it works similar to “==”, but works different for Float and Double values.
 
 fun main(args: Array<String>) {
 
@@ -30,6 +32,19 @@ fun main(args: Array<String>) {
 
     var user4 = user1.copy(id = 10)    // user1.copy(10)
     println(user4)                          //  User(name=Master, id=10)
+    
+    val hash1=user1.hashCode();
+    val hash2=user2.hashCode();
+    val hash3=user3.hashCode();
+    val hash4=user4.hashCode();
+    
+    println(hash1)      //835510190
+    println(hash2)      //835510190
+    println(hash3)      //-938448478
+    println(hash4)      //76322111
+    println("hash1 == hash 2 ${hash1.equals(hash2)}")   // true
+    println("hash2 == hash 3 ${hash2.equals(hash3)}")   // false
+    println("hash1 == hash 3 ${hash1.equals(hash3)}")   // false
 
 }
 
