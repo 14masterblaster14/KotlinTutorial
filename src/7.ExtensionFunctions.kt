@@ -1,6 +1,6 @@
 // Extension Functions :
 //    We can add more functionality to the existing classes, by without inheriting them and without modifying the actual class.
-
+// Companion Object Extensions 
 
 fun main(args: Array<String>) {
 
@@ -29,6 +29,12 @@ fun main(args: Array<String>) {
     println("before swapping the list :$list2")     //  before swapping the list :null
     val result2 = list2.swap(0, 2)
     println("after swapping the list :$result2")    // after swapping the list :null
+    
+    // Companion Object Extensions 
+    val ob = MyClass.display("Function declared in companion object")
+    println(ob)                                     //Function declared in companion object
+    // invoking the extension function 
+    val ob2 = MyClass.abc()                         //Extension function of companion object
 }
 
 class Student {
@@ -53,13 +59,16 @@ fun String.add(s1: String, s2: String): String {
     return this + s1 + s2
 }
 
-
-fun Int.greaterValue(other: Int): Int {
-
-    if (this > other)
-        return this
-    else
-        return other
+// Nullable receiver
+fun Int?.greaterValue(other: Int): Int {
+    if(this == null){
+            println("Null")
+       }else{
+                if (this > other)
+                    return this
+                else
+                    return other
+            }
 }
 
 fun MutableList<Int>.swap(index1: Int, index2: Int): MutableList<Int> {
@@ -79,4 +88,19 @@ fun MutableList<Int>?.swap(index1: Int, index2: Int): Any {
         this[index2] = tmp
         return this
     }
+}
+
+// Companion Object Extensions 
+
+class MyClass {
+    companion object {
+        // member function of companion object
+        fun display(str :String) : String{
+            return str
+        }
+    }
+} 
+    // extension function of companion object
+fun MyClass.Companion.abc(){
+    println("Extension function of companion object")
 }
