@@ -3,6 +3,18 @@ import java.util.*
 //  REPL --> Read ,Evaluate, Print, Loop
 //  fun Kotlin.main (args : Array<String>)
 
+//    let : 
+//	    	To execute an action only when a reference holds a non-nullable value, we can use a let operator. 
+//	    	The lambda expression present inside the let is executed only if the variable firstName is not null.
+
+//   also() method chain with let() – 	
+//	    	If we want to apply some additional operation like printing the non-nullable items of the list we can use an also() method and chain it with a let() or run().
+
+//   run() method – 
+//		It is used to execute some operation on a nullable reference. 
+//		It seems to be very similar to let() but inside of a function body, the run() method operates only when we use this reference instead of a function parameter.
+	
+
 fun main(args: Array<String>) {
 
     // Data types ::
@@ -254,4 +266,56 @@ fun main(args: Array<String>) {
     println("Are you adult")
     var isAdult = Scanner(System.`in`).nextBoolean()
     println("Is Adult: $isAdult")           // Is Adult: true
+    
+    
+    // Null safe 
+    
+     private var stringName1 : String = "Sachin"
+     private var stringName2 : String? = null
+	
+	//Safe Call operator(?.) –
+	println(stringName1?.toUpperCase())	// SACHIN
+	println(stringName1?.length)		// 6
+	println(stringName2?.toUpperCase())	// null
+	
+    // We can use the safe call operator with let(), also() and run() if value is not null-
+	
+		
+    var stringlist: List<String?> = listOf("Sachin","is", null, "Batsman")  // created a list contains names
+    var newlist = listOf<String?>()		 // created new list
+    
+    // let : To execute an action only when a reference holds a non-nullable value, we can use a let operator. The lambda expression present inside the let is executed only if the variable firstName is not null.
+    for (item in stringlist) {
+        item?.let { newlist = newlist.plus(it) } // executes only for non-nullable values	
+    }
+    for(items in newlist){			 // to print the elements stored in newlist
+        print(items)				 // Sachin is Batsman			
+    }
+    
+    // also() method chain with let() – If we want to apply some additional operation like printing the non-nullable items of the list we can use an also() method and chain it with a let() or run().
+    for (item in stringlist) {
+        item?.let { newlist = newlist.plus(it) }	// executes only for non-nullable values
+        item?.also{it -> print(it)}			// Sachin is Batsman	
+    }
+    
+    // run() method – to execute some operation on a nullable reference. It seems to be very similar to let() but inside of a function body, the run() method operates only when we use this reference instead of a function parameter
+    for (item in stringlist) {
+        // executes only for non-nullable values
+        item?.run { newlist = newlist.plus(this) } // this reference
+        item?.also{it -> print(it)}		   // Sachin is Batsman	
+    }
+    
+    // Elvis Operator(?:) –
+    
+     var str : String?  = "MasterBlaster"
+    println(str?.length)	// 12
+    str = null
+    println(str?.length ?: "-1")	// -1
+    
+    // Not null assertion : !! Operator
+    
+    var str : String?  = "MasterBlaster"
+    println(str!!.length)      // 12	
+    str = null
+    str!!.length	    // Exception in thread "main" kotlin.KotlinNullPointerException at FirstappKt.main(firstapp.kt:8)
 }
