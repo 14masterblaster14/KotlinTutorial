@@ -1,9 +1,13 @@
 /*
+*   A sealed class defines a set of subclasses within it. 
+    It is used when it is known in advance that a type will conform to one of the subclass types.
 *
 *   Sealed classes are abstract
 *   Sealed Classes can be termed as Enum classes on steroids.
 *   Sealed classes are open by default
-*
+
+*   Note:   All the subclasses of the sealed class must be defined within the same Kotlin file. 
+            However, it not necessary to define them within the sealed class, they can be defined in any scope where the sealed class is visible.
 */
 
 
