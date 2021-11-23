@@ -42,7 +42,7 @@ fun main(args: Array<String>) {
     println(hash2)      //835510190
     println(hash3)      //-938448478
     println(hash4)      //76322111
-    println("hash1 == hash 2 ${hash1.equals(hash2)}")   // true
+    println("hash1 == hash 2 ${hash1.equals(hash2)}")   // true  user1 and user2 have same object contents, so they are equal, thus they have same hash code values.
     println("hash2 == hash 3 ${hash2.equals(hash3)}")   // false
     println("hash1 == hash 3 ${hash1.equals(hash3)}")   // false
 
