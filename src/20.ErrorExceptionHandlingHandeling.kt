@@ -15,6 +15,9 @@ Kotlin finally block –
         
 Kotlin throw keyword –        
         we use throw keyword to throw an explicit exception. It can also be used to throw a custom exception.
+        
+        Nested try block and 
+        multiple catch block
 */
 
 
@@ -67,6 +70,30 @@ fun main(args: Array<String>) {
     //O/P : Exception in thread "main" java.lang.ArithmeticException: Password is too short
  
   
+  // nested try block 
+  
+   val numbers = arrayOf(1,2,3,4)
+  
+    try {
+        for (i in numbers.indices) {
+            try {
+                var n = (0..4).random()
+                println(numbers[i+1]/n)
+  
+            } catch (e: ArithmeticException) {
+                println(e)
+            }
+        }
+    } catch (e: ArrayIndexOutOfBoundsException) {
+        println(e)
+    }
+    
+    //    O/P:-
+    //    2
+    //    3
+    //    java.lang.ArithmeticException: / by zero
+    //    java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+  
     //  multiple catch block
 
     try {
@@ -86,6 +113,25 @@ fun main(args: Array<String>) {
     arithmetic exception catch
     code after try catch...
     */
+    
+    //Use of when in catch block 
+    
+    val sc = Scanner(System.`in`)
+        try {
+            val n = Integer.parseInt(sc.nextLine())
+            if (512 % n == 0)
+                println("$n is a factor of 512")
+        } catch (e: Exception ) {
+          when(e){
+              is ArithmeticException -> { println("Arithmetic Exception: Divide by zero") }
+              is NumberFormatException -> { println("Number Format Exception ") }
+          }
+        }
+    }
+// I/P -> O/P:
+// Sachin -> Number Format Exception
+// 0 -> Arithmetic Exception: Divide by zero
+
 }
 
  //* throw keyword
