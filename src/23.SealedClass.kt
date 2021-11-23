@@ -8,10 +8,27 @@
 
 *   Note:   All the subclasses of the sealed class must be defined within the same Kotlin file. 
             However, it not necessary to define them within the sealed class, they can be defined in any scope where the sealed class is visible.
+            
+// A sealed class with a single subclass defined inside
+sealed class ABC {
+ class X: ABC(){...}
+}
+
+// Another subclass of the sealed class defined
+class Y: ABC() {
+  class Z: ABC()   // This will cause an error. Sealed class is not visible here
+  
+}
 */
 
 
 fun main(args: Array<String>) {
+    
+    val obj = Demo.B()
+    obj.display()       //  Subclass B of sealed class Demo
+  
+    val obj1 = Demo.A()
+    obj1.display()      //  Subclass A of sealed class Demo
 
     var circle = Shape.Circle(4.5f)
     var square = Shape.Square(4)
@@ -28,10 +45,34 @@ fun main(args: Array<String>) {
     val mobile1: Mobile = Mobile("IPhone", MobileColor.GOLD)
     val mobile2: Mobile = Mobile("SONY", MobileColor.BLACK)
     println("The color of my ${mobile1.name} is ${mobile1.color}")
+    
+    //Sealed class with when –
+    // Objects of different subclasses created
+    val obj = Fruit.Apple()
+    val obj1 = Fruit.Mango()
+    val obj2 = Pomegranate()
+  
+    // Function called with different objects
+    display(obj)        // Apple is good for iron
+    display(obj1)       // Mango is delicious
+    display(obj2)       // Pomegranate is good for vitamin d    
 
 }
 
-
+sealed class Demo {
+    class A : Demo() {
+        fun display()
+        {
+            println("Subclass A of sealed class Demo")
+        }
+    }
+    class B : Demo() {
+        fun display()
+        {
+            println("Subclass B of sealed class Demo")
+        }
+    }
+}
 
 sealed class Shape {
     class Circle(var radius: Float) : Shape()
@@ -70,12 +111,29 @@ fun execute(ops: ArithmaticOperations) = when (ops) {
 
 data class Mobile(val name: String, val color: MobileColor)
 
-// Enum Classes
+// Sealed class with when –
 
-enum class MobileColor(val value: Int) {
-    GOLD(0xffd323),
-    SILVER(0xeaeaea),
-    WHITE(0xffffff),
-    BLACK(0x000000),
-    RED(0xFF0000)
+// A sealed class with a string property
+sealed class Fruit
+    (val x: String)
+{
+    // Two subclasses of sealed class defined within
+    class Apple : Fruit("Apple")
+    class Mango : Fruit("Mango")
 }
+  
+// A subclass defined outside the sealed class
+class Pomegranate: Fruit("Pomegranate")
+  
+// A function to take in an object of type Fruit
+// And to display an appropriate message depending on the type of Fruit
+fun display(fruit: Fruit){
+    when(fruit)
+    {
+        is Fruit.Apple -> println("${fruit.x} is good for iron")
+        is Fruit.Mango -> println("${fruit.x} is delicious")
+        is Pomegranate -> println("${fruit.x} is good for vitamin d")
+    }
+}
+
+
