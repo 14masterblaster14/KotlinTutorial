@@ -5,6 +5,8 @@
 // You cannot create instance of abstract class
 // If any property or method is abstract then class needs to define abstract.
 // An abstract class can contain both abstract and non-abstract members.
+// All the variables (properties) and member functions of an abstract class are by default non-abstract. So, if we want to override these members in the child class then we need to use open keyword.
+// If we declare a member function as abstract then we does not need to annotate with open keyword because these are open by default.
 
 fun main(args: Array<String>) {
     var indians = Indians()
