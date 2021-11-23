@@ -1,5 +1,8 @@
 import java.math.BigInteger
 
+// Recursion Function :-
+//                      A function which calls itself is called as recursive function and this process of repetition is called recursion.
+
 // TailRec Functions ::
 //          - They are also called as recursive functions
 //          - Optimize the memory usage
@@ -45,7 +48,7 @@ fun fact(x: Int): Int {
     return factTail(x, 1)
 }
 
-/// Recursion Function
+/// Recursion Function <refer image for execution understanding>
 
 fun factorial(n: Int): Long {
     return if (n == 1) {
@@ -54,3 +57,4 @@ fun factorial(n: Int): Long {
         n * factorial(n - 1)
     }
 }
+
