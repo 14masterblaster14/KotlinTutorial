@@ -14,6 +14,8 @@ import java.util.*
 //		It is used to execute some operation on a nullable reference. 
 //		It seems to be very similar to let() but inside of a function body, the run() method operates only when we use this reference instead of a function parameter.
 	
+// Type Checking and Smart Casting :
+
 
 fun main(args: Array<String>) {
 
@@ -318,4 +320,51 @@ fun main(args: Array<String>) {
     println(str!!.length)      // 12	
     str = null
     str!!.length	    // Exception in thread "main" kotlin.KotlinNullPointerException at FirstappKt.main(firstapp.kt:8)
+	
+
+	
+	// Type Checking : we can check the type of certain variable using the is operator at runtime.
+ 	
+    var name = "Praveen"
+    var age = 24
+    var salary = 5000.55
+    var emp_id = 12345f
+    val employeeDetails: List<Any> = listOf(name, age, salary, emp_id)
+  
+    for (attribute in employeeDetails) {
+        when (attribute) {
+            is String -> println("Name: $attribute ")
+            is Int -> println("Age: $attribute")
+            is Double -> println("Salary: $attribute")
+            else -> println("Not an attribute")
+        }
+    }
+    
+    /*  O/P:-
+	Name: Praveen 
+	Age: 24
+	Salary: 5000.55
+	Not an attribute
+    */		
+	
+    // Smart Casting : We use is or !is operator to check the type of variable, and compiler automatically casts the variable to the target type
+	
+    val str1: String? = "MasterBlaster"
+    var str2: String? = null   // prints String is null
+    if(str1 is String) {
+         
+        // No Explicit type Casting needed.
+        println("length of String ${str1.length}")	//length of String 12
+    }
+    else {
+        println("String is null")
+    }
+    
+    if(str1 !is String) {
+        println("String is null")
+    }
+    else {
+        println("length of String ${str1.length}")	//length of String 12
+    }
+	
 }
