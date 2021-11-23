@@ -2,6 +2,8 @@
 // Abstract Methods have no body when declared
 // Abstract Property cannot be initialize when declared
 // Need to override the Abstract methods,properties inside derived classes
+// You cannot create instance of abstract class
+// If any property or method is abstract then class needs to define abstract.
 
 fun main(args: Array<String>) {
     var indians = Indians()
