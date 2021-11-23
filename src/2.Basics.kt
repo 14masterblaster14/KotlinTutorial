@@ -115,7 +115,13 @@ fun main(args: Array<String>) {
     println("First print then decrement: "+ e--)	//First print then decrement: 12
     println("First decrement then print: "+ --e)	//First decrement then print: 10
     
-    // Ranges
+    // Ranges:
+    //	three ways for creating Range 
+	//	Using (..) operator
+	//	Using rangeTo() function
+	//	Using downTo() function
+	
+	// step, one can provide step between values. 
 
     val r1 = 1..5                   // 1,2,3,4,5
 
@@ -154,7 +160,26 @@ fun main(args: Array<String>) {
         print("$element")
     }
     // O/P : e  d  c  b  a
+    
+     for (i in 3..10 step 2) 
+        print("$i ") 			// 3 5 7 9 
+    println()
+    // print first value of the range
+    println((11..20 step 2).first) 	// 11
+    // print last value of the range
+    println((11..20 step 4).last)  	// 19
+    // print the step used in the range
+    println((11..20 step 5).step) 	// 5
+    
+    // Some predefined function in range –
+    val predefined = (15..20)
+    println("The minimum value of range is: "+predefined.min())		// The minimum value of range is: 15
+    println("The maximum value of range is: "+predefined.max())		// The maximum value of range is: 20
+    println("The sum of all values of range is: "+predefined.sum())	// The sum of all values of range is: 105
+    println("The average value of range is: "+predefined.average())	// The average value of range is: 17.5
 
+    
+    
     // String : 
     		// An array of characters is called a string.
 		// Kotlin strings are also immutable in nature means we can not change elements and length of the String. 
