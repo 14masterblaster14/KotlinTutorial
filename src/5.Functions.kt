@@ -10,7 +10,12 @@
     compareTo() – To compare two numbers and return boolean value.
 */
 
-// VarArgs
+// VarArgs:
+ //         Sometimes we need a function where we can pass n number of parameters, and the value of n can be decided at runtime. 
+//          We can do it by defining a parameter of a function as vararg
+//          The vararg parameters must be the last parameter in the parameter list
+//          Arrays can be passed into vararg functions using the Spread Operator, *
+//          The spread operator can also be used in the middle of the parameters which will be part of last vararg.
 
 fun main(args: Array<String>) {
 
