@@ -25,6 +25,9 @@ import kotlin.collections.set
 *   Mutable Map    : HashMap,   hashMapOf,   mutableMapOf
 *   Mutable Set    : mutableSetOf,  hashSetOf
 *
+*    ArrayList class is used to create a dynamic array.Dynamic array states that we can increase or decrease the size of an array as per requisites.
+*
+*
 */
 
 fun main(args: Array<String>) {
@@ -135,16 +138,29 @@ fun main(args: Array<String>) {
         println(element)
     }
     // O/P :-   Yogi Modi Vajpayee Modi Vajpayee
+    
+    //Sorting the elements in list –
+    
+    val list = listOf(8, 4, 7, 1, 2, 3, 0, 5, 6 )
+ 
+    val asc = list.sorted()   //  sorts the list in ascending order. 
+    println(asc)  //  [0, 1, 2, 3, 4, 5, 6, 7, 8]
+ 
+    val desc = list.sortedDescending()
+    println(desc) //  [8, 7, 6, 5, 4, 3, 2, 1, 0]
 
     var list4 = listOf<String>("Vajpayee", "Modi")
-
+    
+    //First and Last Elements –
     println("First : ${list3.first()}")     //First : Yogi
     println("Last : ${list3.last()}")       //Last : Vajpayee
     println("Sublist : ${list3.subList(0, 1)}") //Sublist : [Yogi]
     println(list3.get(0))   //Yogi
-    println(list3.indexOf("Vajpayee")) // 2
+    // Indexing of Elements of List 
+    println(list3.indexOf("Vajpayee")) // 2   
     println(list3.lastIndexOf("Vajpayee"))  // 4
     println(list3.size) //5
+    //Contains() and containsAll() functions –
     println(list3.contains("Modi")) // true
     println(list3.containsAll(list4))   //true
     println(list3.subList(2, 4))     // [Vajpayee, Modi]
