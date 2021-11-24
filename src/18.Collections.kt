@@ -4,7 +4,7 @@ import kotlin.collections.set
 
 /*
 *
-*   ************************ Collections **************************
+*   ************************ Collections ************************** < ARRANGE: refer GFG>
 *
 *   Array   : Mutable,has fixed size and duplicate members are allowed.
 *   List    : List is a collection which is ordered and duplicate members are allowed.
@@ -25,9 +25,34 @@ import kotlin.collections.set
 *   Mutable Map    : HashMap,   hashMapOf,   mutableMapOf
 *   Mutable Set    : mutableSetOf,  hashSetOf
 *
-*    ArrayList class is used to create a dynamic array.Dynamic array states that we can increase or decrease the size of an array as per requisites.
 *
-*
+*   ArrayList:
+*            ArrayList class is used to create a dynamic array.Dynamic array states that we can increase or decrease the size of an array as per requisites.
+*            Constructors –
+*                            1) ArrayList<E>(): – Creates an empty ArrayList
+*                            2) ArrayList(capacity: Int): – Creates an ArrayList of specified size.
+*                            3) ArrayList(elements: Collection<E>): – Create an ArrayList filled by collection elements.
+*            
+            Some of the important Methods –
+                            add(index:Int, element: E): Boolean
+                            
+                            addAll(index: Int, elements: Collection): Boolean     
+                                      It is used to add all the elements of specified collection into the current list at the specified index. 1st parameter is the index value which is again optional one.
+                            
+                            get(index: Int): E
+                            
+                            set(index: Int, element: E):E
+                            
+                            indexOf(element: E): Int
+                            
+                            remove(element: E): Boolean
+                                      It is used to remove the first occurrence of the specific element from current collection, if it is available.
+                            
+                            removeAt(index)
+                            
+                            clear()
+
+
 */
 
 fun main(args: Array<String>) {
@@ -121,7 +146,7 @@ fun main(args: Array<String>) {
 
     var list1 = mutableListOf<String>()       // Mutable, No Fixed size, Can Add/Remove elements
     var list2 = arrayListOf<String>()           // Mutable, No Fixed size, Can Add/Remove elements
-    var list3 = ArrayList<String>()                           // Mutable, No Fixed size, Can Add/Remove elements
+    var list3 = ArrayList<String>()             // Mutable, No Fixed size, Can Add/Remove elements
 
     list3.add("Yogi")       //0
     list3.add("Manmohan")   //1
