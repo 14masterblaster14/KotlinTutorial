@@ -1,9 +1,13 @@
+// Lambadas : Its a function with no name
+// Syntax of Lambda expression – 
+//                              val lambda_name : Data_type = { argument_List -> code_body }
+//
 // high Level Functions :
 //        - Can accept functions as a parameter
 //        - Can return a function
 //        - Or can do both
 //
-// Lambadas : Its a function with no name
+
 //
 // Closures :
 //          In java 8, you can't mutate values of outside variable inside Lambadas.
