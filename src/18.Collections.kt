@@ -7,8 +7,10 @@ import kotlin.collections.set
 *   ************************ Collections **************************
 *
 *   Array   : Mutable,has fixed size and duplicate members are allowed.
-*   List    : List is a collection which is ordered and allows duplicate members.
-*   Map     : A key-value pair.
+*   List    : List is a collection which is ordered and duplicate members are allowed.
+*   Map     : A key-value pair. Duplicate members are allowed..
+              Map keys are unique and hold only one value for each key, it is a set of key-value pairs. Each key maps to exactly one value. 
+              The values can be duplicates but keys should be unique. Maps are used to store logical connections between two objects.
 *   Set     : A set is a collection which is unordered,unindexed and does not allowed duplicate members.
 *
 **   Immutable Collections < read only operations >
