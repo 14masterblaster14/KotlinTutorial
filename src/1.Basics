@@ -3,7 +3,7 @@ https://agrawalsuneet.github.io/tags/kotlin/
 https://agrawalsuneet.github.io/tags/android/
 
 Platform Independent : 
-                    Like Java, Kotlin is also platform independent language so it converts into the bytecode first. 
+                    Like Java, Kotlin is also JVM based and platform independent language so it converts into the bytecode first. 
                     We can get the bytecode as Tools -> Kotlin -> Show Kotlin Bytecode. Then, decompile to get this bytecode.
 
 // REPL --> Read ,Evaluate, Print, Loop
