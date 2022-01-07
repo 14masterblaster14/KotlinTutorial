@@ -11,6 +11,8 @@
 
 // secondary Constructor: We can have multiple secondary constructors.
 
+// Destructuring Declarations
+
 fun main(args: Array<String>) {
 
     var employee = Employee("Master")   //  Employee name is Master
@@ -238,3 +240,18 @@ class OuterClass {
         }
     }
 }
+
+
+
+//  Destructuring Declarations :
+//                        Kotlin provides a unique way to work with instances of a class, in the form of destructuring declarations. 
+//                        A destructuring declaration is the one that creates and initializes multiple variables at once.
+//                        The destructing declaration works on the concept of component() functions. 
+//                        The number of variables that a destructing declaration can define, the class provide those number of component functions, starting from component1(), component2() up to componentN(). The data class in Kotlin by default implement component functions.          
+//         
+//            e.g.        val (emp_id,salary) = employee
+//            It will be treated as :
+//                        val emp_id = employee.component1()
+//                        val salary = employee.component2()
+//          
+
