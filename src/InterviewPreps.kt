@@ -57,7 +57,7 @@ SOLID PINCIPLES: <Refer : https://medium.com/android-news/android-development-th
 													A Composite pattern can have two types of objects: composite and leaf. 
 													A composite object can have further objects, whereas a leaf object is the last object.
 									
-		c)	Behavioral patterns: How you coordinate object interactions. “So… how do I tell which class is responsible for what?” 	
+		c)	Behavioral patterns: How you coordinate object interactions. “So… how do I tell which class is responsible for what?” 	<SOCS>
 									- Command 	:	An Event is a command-style object that’s triggered by user input, server data or pretty much anything else in your app.
 									- Observer 	: 	The Observer pattern defines a one-to-many dependency between objects. When one object changes state, its dependents get a notification and updates automatically.
 													e.g : 	It was originally popularized by the RxAndroid framework, also known as Reactive Android. 
@@ -76,6 +76,96 @@ SOLID PINCIPLES: <Refer : https://medium.com/android-news/android-development-th
 									-	MVVM + Clean Architecture
 									
 		Note : 4 2 2 3 	
+		
+		
+	## Creating Builder Pattern:
+			
+			Way1:
+					class Student(		//add private constructor if necessary i.e. class Car private constructor(
+						var name : String, 
+						var address : String,
+						var subjects : List<String>?){
+						
+						private constructor(builder: Builder) : this(builder.name, builder.address,builder.subjects)
+						
+						class Builder {
+							var name : String = " "
+								private set
+								
+							var address : String = " "
+								private set
+							
+							var subjects : List<String>? = null
+								private set
+							
+							fun name(_name : String)= apply{this.name = _name}
+							fun address(_address : String)= apply{this.address = _address}
+							fun subjects(_subjects : List<String>) = apply{this.subjects = _subjects}
+							fun build() = Student(this)
+							
+						}
+					}
+			
+			Usage :-
+			
+						var stud1 = Student.Builder().name("Sachin")
+													.address("Mumbai,Maharashtra,India")
+													.subjects(listOf("Physics", "Chemistry", "Maths"))
+													.build()
+		
+						println("Student Name :-> ${stud1.name}")
+						
+						
+						
+			Way 2 : Ref: https://blog.devgenius.io/builder-pattern-in-kotlin-ditch-multiple-constructors-with-numerous-params-2a679e76e006
+
+					class Student(builder: StudentBuilder){
+      
+						var name : String = " "
+						var address : String = " "
+						var subjects : List<String> = listOf()
+						
+						init{
+								name = builder.name
+								address = builder.address
+								subjects = builder.subjects
+						}
+						
+						class Builder {
+							var name : String = " "
+							var address : String = " "
+							var subjects : List<String> = listOf()	
+							
+							fun name(_name : String):StudentBuilder{
+								this.name = _name
+								return this
+							}
+							
+							fun address(_address : String):StudentBuilder{
+								this.address = _address
+								return this
+							}
+							
+							fun subjects(_subjects : List<String>):StudentBuilder{
+								this.subjects = _subjects
+								return this
+							}
+							
+							fun build():Student = Student(this)
+							
+						}
+					}
+					
+			usage : 		
+
+					var student1 = Student.StudentBuilder()
+													.name("Sachin")
+													.address("Mumbai,Maharashtra,India")
+													.subjects(listOf("Physics", "Chemistry", "Maths"))
+													.build()
+                                                    
+					println("Student :- ${student1.name}") 		
+		
 		
 		
 4>  Android Security :		
@@ -167,6 +257,7 @@ SOLID PINCIPLES: <Refer : https://medium.com/android-news/android-development-th
 												-
 												
 												- SSL (Secure Socket Layer) Pinning : Securing listening sockets
+															Refer : https://www.raywenderlich.com/10056112-securing-network-data-tutorial-for-android
 												
 														- 	SSL certificate creates a foundation of trust by establishing a secure connection.
 														- 	This connection ensures that all data passed between the web server and browsers remain private and integral. 
@@ -368,8 +459,8 @@ Lazy-Loading feature is available in Kotlin.							This feature is not available
 		1> Use Promon shield
 		2> Use Rootbeer library
 		3> Your own code check:
-		     (a) checkForBusyBoxBinary, checkForSuBinary* — su (super user) and Busybox binaries are often present on rooted devices to perform some of the privilege escalation and utility functions. Using file search look we search of presences of these in various which if found in the Android file system could indicate the device is rooted.
-			 (b) checkSuExists* — slightly different file system check for the su binary.
+		     	(a) checkForBusyBoxBinary, checkForSuBinary* — su (super user) and Busybox binaries are often present on rooted devices to perform some of the privilege escalation and utility functions. Using file search look we search of presences of these in various which if found in the Android file system could indicate the device is rooted.
+			(b) checkSuExists* — slightly different file system check for the su binary.
 			 
 			 
         String[] places = { "/sbin/", "/system/bin/", "/system/xbin/",
@@ -395,10 +486,29 @@ Lazy-Loading feature is available in Kotlin.							This feature is not available
       ("It is not rooted device");
    } 
    
+   
+  
+		(c)	// #1. Check the Build Information whether it's a test build or not
+			/**
+			 * Release-Keys and Test-Keys has to do with how the kernel is signed when it is compiled.
+			 * Test-Keys means it was signed with a custom key generated by a third-party developer.
+			 * @return true if signed with Test-keys
+			 */
+			 
+		(d)	
+			/**
+			 * Using the PackageManager, check for a list of well known root apps. @link {Const.knownRootAppsPackages}
+			 * @param additionalRootManagementApps - array of additional packagenames to search for
+			 * @return true if one of the apps it's installed
+			 */
+			 
+		(e)	Check if /system/app/Superuser.apk is present	  
+   
+   
 12>	Task Affinity and Launch Modes : 
 				*Reference :	https://medium.com/android-news/https-medium-com-yashsoniweb-android-tasks-ffbd547ff5b8
-								https://medium.com/@jangraajit/task-affinity-impact-31d9032642d4
-								https://0202gaurav.medium.com/activity-launch-modes-android-d7135a360170
+						https://medium.com/@jangraajit/task-affinity-impact-31d9032642d4
+						https://0202gaurav.medium.com/activity-launch-modes-android-d7135a360170
 
 				* 	Task means stack of activities. 
 				*	Stack basically works on last in first out <LIFO> the concept.
@@ -525,6 +635,7 @@ Lazy-Loading feature is available in Kotlin.							This feature is not available
 
 				*Reference: https://medium.com/@Codeible/understanding-and-using-services-in-android-background-foreground-services-8130f6bbf2a5
 							https://aalishan565.medium.com/android-services-frequently-asked-interview-questions-d33b37adf06d
+				Refer: ServiceLifeCycle.png
 				
 				Services are application component which has no interface and can perform long-running operations in the background.
 				These are the three different types of services:
@@ -596,7 +707,311 @@ Lazy-Loading feature is available in Kotlin.							This feature is not available
 						onCreate() -> onStartCommand() -> onBind() -> Service is Runing -> onRebind() -> onUnbind() -> onDestroy()
 						
 						
-15>						
+15>	Custom View:
+				
+				The Android View class is the basic building block of an Android user interface. 
+				A View occupies a rectangular area on the screen to draw itself and its children (for the case of a ViewGroup).
+
+				ViewGroup is a subclass of the View class. ViewGroup is the base class for Android layouts, which are containers for a set of Views (or other ViewGroups),
+				and define their own layout properties and also where each subview should draw itself.
+				
+				
+				View -> ImageView
+					 -> TextView
+					 -> ViewGroup	-> Frame layout
+									-> Relative layout	
+									
+				Creating custom views is centered around five primary aspects that we may need to control or modify:
+					Attributes 	- Defining custom XML attributes for your view and using them to control behavior with TypedArray
+					Drawing 	- Control the rendering of the view on screen visually by overriding the onDraw method.
+					Measurement - Control the content dimensions of the view on screen by overriding the onMeasure method.
+					Interaction - Control the ways the user can interact with the view with the onTouchEvent and gestures.
+					Persistence - Storing and restoring state on configuration changes to avoid losing the state
+								  with onSaveInstanceState and onRestoreInstanceState	
+																
+				Attributes:		
+				
+				For custom View, we need to inherit the View class with any of the constructor.
+
+					constructor(context: Context)
+							To create a new View instance from Kotlin code, it needs the Activity context.
+					constructor(context: Context, attrs: AttributeSet)
+							To create a new View instance from XML.
+					constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int)
+							To create a new view instance from XML with a style from theme attribute.
+					constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int)
+							To create a new view instance from XML with a style from theme attribute and/or style resource.
+							
+				
+				Drawing on Canvas:	Now start drawing by overriding the onDraw() method from the parent class.
+						
+						override fun onDraw(canvas: Canvas) {
+								  // call the super method to keep any drawing from the parent side.
+								  super.onDraw(canvas)
+								}
+				
+				Measurement /Responsive View :
+								Android measures the view width and heigh. You can get these values by using measuredWidth, measuredHeight.
+								Override the onMeasure() method to provide an accurate and efficient measurement of the view contents.
+								
+						override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {      
+						super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+							}		
+							
+				User Interaction:
+							we can set the clicklisteners on the view.
+							
+				Persistence / Saving View State:
+							We can save your view state in case there is any change in the device configuration, 
+							e.g., orientation, by overriding the onSaveInstanceState() and onRestoreInstanceState() methods.
+							
+							
+16> Recycler view 
+
+		LayoutManagers:	
+						LinearLayoutManager 		: 	shows items in a vertical or horizontal scrolling list.
+						GridLayoutManager 			:	shows items in a grid.
+						StaggeredGridLayoutManager	: 	shows items in a staggered grid.
+
+		Recycler view with multiple views:
+		
+					-	Define RowType/ViewType as Enum or sealed class
+					- 	In RecyclerView Adapter	:
+							-	override getItemViewType method
+									override fun getItemViewType(position: Int): Int
+							-	OncreateViewHolder, return resp ViewHolders
+									return when (viewType) 
+							- 	OnBindViewHolder, call bind functions of resp viewholder
+									when (holder.itemViewType)
+					-	Define 3 seperate ViewHolders
+					
+					
+					
+					
+					
+17> Android JetPack Components:
+
+		A> 	Architecture:
+						-	Data Binding
+						-	View Binding
+						-	Live Data
+						-	Navigation
+						-	Paging
+						-	Room
+						-	ViewModel
+						-	WorkManager
+						
+		B>	Foundation:
+						-	AppCompat
+						-	Android KTX
+						-	Multidex
+						-	Test
+						
+		C>	UI:	
+						-	Animation and Transitions
+						-	Auto, TV and Wear
+						-	Emoji
+						-	Fragment
+						-	Layout
+						-	Palette
+						
+		D>	Behaviour:
+						-	Download Manager
+						-	Media & Playback
+						-	Permissions
+						-	Notifications
+						-	Sharing
+						-	Slices
+						
+						
+18> ViewModels:
+
+				 <data>
+						<variable
+							name="scoreViewModel"
+							type="com.example.viewmodellivedata.screens.score.ScoreViewModel" />		
+				</data>			
+				
+	Oneway Binding :		
+						android:text="@{String.valueOf(scoreViewModel.score)}"
+						android:onClick="@{()->scoreViewModel.onPlayAgain()}"
+	
+	Twoway Binding :
+						android:text="@={String.valueOf(scoreViewModel.score)}"
+
+	Property Backing:
+						private val _score = MutableLiveData<Int>()
+						val score : LiveData<Int>
+							get() = _score	
+				
+
+19> How to implement Picture in Picture (PIP) mode:
+		-	It's a special type of multi-window mode mainly used for activities that need to be active on screen but should not take up the whole screen space like watching videos, video calls, navigation, etc. 
+			It lets the user watch a video in a small window pinned to a corner of the screen (by default bottom right) while navigating between apps or browsing content on the main screen. 
+			Android 8.0 (API level 26) and above allows activities to launch in PIP mode.
+			The PIP window appears in the top-most layer of the screen. You can drag the PIP window to another location using some special toggles. 
+			When you tap on the window two special controls appear: 
+
+		e.g. By default, no activity has PIP mode enabled.
+		
+		Manifest file -
+					
+					<activity android:name="VideoActivity"
+						android:supportsPictureInPicture="true"
+						android:configChanges=
+							"screenSize|smallestScreenSize|screenLayout|orientation"
+						...
+						
+		onClick of button, activity will enter in PIP mode :	
+				First, we will get the display size using the getWindowManager().
+				After that using the function enterPictureInPictureMode() which should be provided with a PictureInPictureParams.Builder parameter.
+			
+				val d: Display = windowManager.defaultDisplay
+				val p = Point()
+				d.getSize(p)
+				val width: Int = p.x
+				val height: Int = p.y
+				val ratio = Rational(width, height)
+				val pip_Builder: PictureInPictureParams.Builder = Builder()
+				pip_Builder.setAspectRatio(ratio).build()
+				enterPictureInPictureMode(pip_Builder.build())
+		
+
+20> How to check lateinit var is initialized or not?	
+					::variableName.isInitialized
+			or:
+					this::variableName.isInitialized
+					
+			But if you are inside a listener or inner class, do this:	
+					this@OuterClassName::variableName.isInitialized
+	e.g.
+			class Tutorial {
+
+					lateinit var tutorialName : String
+
+					fun initializeName(){
+						println(::tutorialName.isInitialized)
+						
+						// initializing name
+						tutorialName = "Android Course"
+						println(this::tutorialName.isInitialized)
+					}
+				}
+
+				fun main() {
+					Tutorial().initializeName();	//	false	true
+				}
+
+21> DVM (DALVIK VIRTUAL MACHINE) vs ART (ANDROID RUN TIME):
+
+			DVM:	
+					Android itself is a Linux system with Dalvik sitting on top of it. 
+					DVM takes android app, turns them from java code into bytecode that the Linux system can run. 
+					Dalvik is a JIT (Just in time) compilation based engine.
+					
+					JAVA source code(.java) –> Bytecode(.dex) –> DVM (DVM runtime convert .dex to native machine code)
+					
+					.dex(Dalvik Executable file) file is an android’s compiled code file. These .dex files are then zipped into a single .apk file.
+					.odex file is created by the Android operating system to save space and increase the boot speed of an Android app (a .apk file).
+					
+					With the Dalvik JIT compiler, each time when the app is run, it dynamically translates a part of the Dalvik bytecode into machine code. 
+					As the execution progresses, more bytecode is compiled and cached. Since JIT compiles only a part of the code, it has a smaller memory footprint and uses less physical space on the device.
+					
+			ART:	ART uses AOT (Ahead of time) compilation.
+					ART is equipped with an Ahead-of-Time compiler. During the app’s installation phase, it statically translates the DEX bytecode into machine code and stores in the device’s storage. 
+					This is a one-time event which happens when the app is installed on the device. With no need for JIT compilation, the code executes much faster.
+					
+					JAVA source code(.java) –> Bytecode(.dex) –> Native code -> ART
+					
+
+			DALVIK VIRTUAL MACHINE											ANDROID RUN TIME
+							
+			Occupies less space due to JIT									Consumes a lot of storage space internally due to AOT
+							
+			Works best for small storage devices							Works best for Large storage devices
+							
+			Longer app loading time											Extremely Faster and smoother Faster and app loading time and lower processor usage
+							
+			Uses JIT compiler(JIT: Just-In-Time)							Uses AOT compiler(Ahead-Of-Time) thereby compiling apps when installed
+			Thereby resulting in lower storage space consumption
+			
+			Application lagging due to garbage collector pauses and JIT		Reduced application lagging and better user experience
+
+			App installation time is comparatively lower 					App installation time is longer as compilation is done during installation
+			as the compilation is performed later	
+			
+			DVM converts bytecode every time you launch a specific app.		ART converts it just once at the time of app installation. That makes CPU execution easier. 		
+																			Improved battery life due to faster execution.
+																			
+		Why Android use Virtual Machine?
+				Android makes use of a virtual machine as its runtime environment in order to run the APK files that constitute an Android application. 
+				
+				Below are the advantages:
+				· The application code is isolated from the core OS. So even if any code contains some malicious code won’t directly affect the system files. It makes the Android OS more stable and reliable.
+				· It provides cross compatibility or platform independency. It meaning even if an app is compiled on platform such as a PC, it can still be executed on the mobile platform using the virtual machine.		
+
+		Benefits of ART
+			· Apps run faster as DEX bytecode translation done during installation.
+			· Reduces startup time of applications as native code is directly executed.
+			· Improves battery performance as power utilized to interpreted byte codes line by line is saved.
+			· Improved garbage collector.
+			· Improved developer tool.
+			
+		Drawbacks of ART
+			· App Installation takes more time because of DEX bytecodes conversion into machine code during installation.
+			· As the native machine code generated on installation is stored in internal storage, more internal storage is required.			
+			
+22> What is MultiDex :		<Refer:https://blog.mindorks.com/understanding-multidex-in-android>	
+
+		In Android, the compilers convert your source code into DEX files. 
+		This DEX file contains the compiled code used to run the app. But there is a limitation with the DEX file. 
+		The DEX file limits the total number of methods that can be referenced within a single DEX file to 64K i.e. 65,536 methods. 
+		So, you can't use more than 64K methods in a particular DEX file. 
+		These 64K methods include Android framework methods, library methods, and methods in our code also. 
+		This limit of 64K is referred to as the "64K reference limit".
+		
+		Two ways - 
+			1) minSdkVersion is set to lower than 21
+			2) Multidex support for API level 21 and higher
+				
+				
+24> Multiwindow application	? i.e. we can support the app for split screen mode/ multiWindow.
+
+			-	 add the resizeableActivity=true parameter to the <activity> (or <application>) tag.
+			-	 add android:configChanges attribute to your app manifest <activity>
+					android:configChanges="screenSize | smallestScreenSize| screenLayout | orientation"
+					
+		Note:	If 	we set resizeableActivity=true  then by default android:supportsPictureInPicture="true".	
+					
+				
+23> Serializable VS Parcellable?
+				
+			Serializable is a standard Java interface. 
+			It is not a part of the Android SDK. 
+			It’s simplicity is it’s beauty. 
+			Just by implementing this interface your POJO will be ready to jump from one Activity to another. 	
+			we don’t have to implement tons of extra methods. 
+			This simple approach has it’s price. Reflection is used during the process and lots of additional objects are created along the way. 
+			This can cause lot’s of garbage collection. The result is poor performance and battery drain.
+				
+			Parcelable is another interface which is a part of the Android SDK.
+			Parcelable was specifically designed in such a way that there is no reflection when using it.
+			
+			Difference between Serializable and Parcelable
+				Serializable is a slow process whereas Parcelable is fast.
+				Parcelable interface takes more time to implement in comparison to Serializable.
+				Serializable creates lots of temporary objects in comparison to Parcelable.
+				Serializable is not reflection safe whereas Parcelable is reflection safe.
+		
+
+24> R.java class :
+			-	Android R.java is an auto-generated file by aapt (Android Asset Packaging Tool) that contains resource IDs for all the resources of res/ directory.
+			-	If you create any component in the activity_main.xml file, id for the corresponding component is automatically created in this file. This id can be used in the activity source file to perform any action on the component.	
+			-	R.java is the dynamically generated class, created during build process to dynamically identify all assets (from strings to android widgets to layouts), for usage in java classes in Android app. 
+			-	Note this R.java is Android specific (though you may be able to duplicate it for other platforms, its very convenient), so it doesn't have much to do with Java language constructs. 
+			
+25>	 
+								
 						
 
 		
