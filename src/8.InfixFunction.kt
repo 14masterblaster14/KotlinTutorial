@@ -4,6 +4,7 @@
 //      - The parameter must not accept variable number of arguments and must have no default value
 //      - They have prefix of "infix"
 //      - All infix functions are Extension functions but all extension functions are not Infix.
+//      - Infix function provides more readability to the functions similar to other operators like in,is,as in kotlin.
 
 //  Standard library infix function notation : e.g Bitwise operator e.g and , ++ , -- etc
 //  User defined infix function notation
