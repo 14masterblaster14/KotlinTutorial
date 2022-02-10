@@ -393,3 +393,15 @@ fun main(args: Array<String>) {
     }
 	
 }
+
+// Explicit Cast operator 'as'
+
+  var man = man as Human
+
+  var women : Human? = women as Human?  
+  // The above explicit cast is unsafe as it can throw an exception if the cast is not possible. That's why as operator called as unsafe cast operator.
+  // So we can use a safe cast operator as? where it assigns a null value if the cast is not possible without throwing an exception.
+  var women : Human? = women as? Human	
+	
+	
+	
