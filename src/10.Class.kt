@@ -3,6 +3,23 @@
             //Behavior : It is represented by methods of an object. It also reflects the response of an object with other objects. 
             //Identity : It gives a unique name to an object and enables one object to interact with other objects.
 
+//          Differences between Any, Unit and Nothing
+
+// Any
+//          Any is by default the superclass of all the classes and has 3 functions: equals, hashCode and toString. This is equal to Object class in Java.
+//          We can create an object of Any class directly or even override these functions in any other class.
+
+// Unit
+//          Unit class is a singleton class, we can't extend or even create an object of it.
+//          Unit class in equal to void type in Java.
+//          The superclass of Unit is Any and it has overridden toString method.
+
+// Nothing
+//          Nothing is non-open (final class) which can't be extended and its constructor is also private that means we can't create the object also.
+//          This is usually used to represent the return type of function which will always throw an exception.
+//          The superclass of Nothing is Any.
+
+
 // Primary Constructors:
 //      with default value
 //      init Block
