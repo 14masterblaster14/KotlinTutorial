@@ -173,6 +173,12 @@ fun main(args: Array<String>) {
  
     val desc = list.sortedDescending()
     println(desc) //  [8, 7, 6, 5, 4, 3, 2, 1, 0]
+    
+    // partition() operator : It can segregate the list into two lists, one with the items matching the condition and another one with the non-matching condition.
+    val list = listOf(1 , 2, 3, 4, 5)
+    val (even, odd) = list.partition { it % 2 == 0}
+    println(even) //  (2,4)
+    println(odd)  //  (1,3,5)
 
     var list4 = listOf<String>("Vajpayee", "Modi")
     
